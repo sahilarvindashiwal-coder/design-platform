@@ -1,0 +1,138 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Luxury)",
+  "vibe": "Cinematic, Expensive, Editorial, Asymmetric",
+  "typography": {
+    "heading_font": "Playfair Display",
+    "body_font": "Outfit",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter leading-none font-black",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none",
+      "h3": "text-xl sm:text-2xl font-light",
+      "h4": "text-lg sm:text-xl",
+      "body": "text-base leading-relaxed",
+      "overline": "uppercase text-xs tracking-[0.2em] font-semibold"
+    }
+  },
+  "colors": {
+    "background": "#0A0A0A",
+    "surface": "#121212",
+    "surface_glass": "bg-black/60 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "accent": "#D4AF37",
+    "accent_hover": "#E5C158",
+    "gradient_wash": "bg-gradient-to-b from-[#1a140d] via-[#0A0A0A] to-[#0A0A0A]",
+    "gradient_wash_alt": "bg-gradient-to-b from-[#0A0A0A] via-[#111111] to-[#0A0A0A]"
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 md:py-32 lg:py-48",
+    "grid_strategy": "bento_tetris_asymmetric",
+    "bento_config": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 lg:gap-12",
+    "border_radius": "rounded-none",
+    "alignment": "Optical alignment, heavily relying on left-aligned text with large right-side negative space"
+  },
+  "motion_strategy": {
+    "smooth_scroll": "Lenis for momentum scrolling to feel premium",
+    "scroll_triggers": "Framer Motion initial={{opacity:0, y:40}} whileInView={{opacity:1, y:0}} viewport={{once:true}}",
+    "entrance": "fade-up with 0.8s duration, 0.2s stagger",
+    "parallax": "Use Framer Motion useScroll and useTransform for y-axis movement on hero and macro images"
+  },
+  "sections_blueprint": [
+    {
+      "name": "Navigation",
+      "type": "sticky_header",
+      "elements": "Brand mark (serif, text-2xl), Links (desktop hidden on mobile), Primary 'WhatsApp to Order' CTA button. Glassmorphism background.",
+      "test_ids": ["nav-home-link", "nav-collection-link", "nav-whatsapp-cta"]
+    },
+    {
+      "name": "Hero",
+      "type": "cinematic_overlay",
+      "elements": "Full viewport height. Background image of dark macro watch dial. Black/50 overlay. H1: 'The Pinnacle of Craftsmanship. Zero Compromise.' Sub: '1:1 Swiss Replica Watches'. Floating WhatsApp CTA.",
+      "test_ids": ["hero-whatsapp-cta"]
+    },
+    {
+      "name": "Why Buy / Trust",
+      "type": "text_heavy_minimal",
+      "elements": "Large editorial statement using serif. 3 pillars (1:1 Quality, Swiss Movement, Free Shipping) laid out asymmetrically. Use the gradient_wash here to transition smoothly.",
+      "test_ids": ["trust-section-container"]
+    },
+    {
+      "name": "Featured Collection",
+      "type": "bento_grid",
+      "elements": "Tetris Grid showing watch models (Rolex Submariner, AP Royal Oak, Patek Nautilus, Omega). High contrast, sharp edges. Hover zoom effect on images within hidden overflow containers.",
+      "test_ids": ["collection-item-rolex", "collection-item-ap", "collection-item-patek", "collection-item-omega"]
+    },
+    {
+      "name": "Craftsmanship",
+      "type": "immersive_macro",
+      "elements": "Full width section with Swiss movement macro image. Strong parallax effect. Overlay text: 'Obsessive Details.'",
+      "test_ids": ["craftsmanship-section"]
+    },
+    {
+      "name": "How to Order",
+      "type": "step_cards",
+      "elements": "3 minimalist glass cards (Browse -> WhatsApp -> Doorstep Delivery). Minimal text, pure functional clarity.",
+      "test_ids": ["order-step-1", "order-step-2", "order-step-3"]
+    },
+    {
+      "name": "Testimonials",
+      "type": "carousel",
+      "elements": "Lifestyle imagery of men in suits/bathrobes. Quotes, 5-star ratings. Horizontal scroll or Framer Motion drag slider.",
+      "test_ids": ["testimonial-next-btn", "testimonial-prev-btn"]
+    },
+    {
+      "name": "FAQ & Final CTA",
+      "type": "accordion_and_massive_cta",
+      "elements": "Shadcn accordion for FAQs. Massive 'Find Your Watch' text in Serif font. Final WhatsApp button. Dark footer with subtle links.",
+      "test_ids": ["faq-accordion-item-1", "faq-accordion-item-2", "final-whatsapp-cta", "footer-links"]
+    }
+  ],
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1670177257750-9b47927f68eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxtYWNybyUyMGx1eHVyeSUyMHdhdGNoJTIwZGlhbCUyMGRhcmt8ZW58MHx8fHwxNzgwOTA5NDE4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Macro shot of a luxury watch dial with dramatic lighting on rock texture, perfect for cinematic hero section"
+    },
+    "craftsmanship_macro": {
+      "url": "https://images.unsplash.com/photo-1768062251809-739d987a42fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwyfHxzd2lzcyUyMHdhdGNoJTIwbW92ZW1lbnQlMjBtYWNyb3xlbnwwfHx8fDE3ODA5MDk0MTd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Close-up of an intricate Swiss mechanical watch movement. Ideal for the parallax craftsmanship section."
+    },
+    "collection_rolex": {
+      "url": "https://images.unsplash.com/photo-1547996160-81dfa63595aa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHw0fHxtYWNybyUyMGx1eHVyeSUyMHdhdGNoJTIwZGlhbCUyMGRhcmt8ZW58MHx8fHwxNzgwOTA5NDE4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Round silver Rolex analog watch, perfect for featured collection grid"
+    },
+    "collection_ap": {
+      "url": "https://images.unsplash.com/photo-1611243705491-71487c2ed137?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHxyb2xleCUyMHdhdGNoJTIwZGFya3xlbnwwfHx8fDE3ODA5MDk0MjR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Blue and silver luxury watch, representing Royal Oak or Nautilus style in the grid"
+    },
+    "collection_patek": {
+      "url": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxyb2xleCUyMHdhdGNoJTIwZGFya3xlbnwwfHx8fDE3ODA5MDk0MjR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Silver and gold round analog watch"
+    },
+    "collection_omega": {
+      "url": "https://images.unsplash.com/photo-1662384197911-e82189f4dc60?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxyb2xleCUyMHdhdGNoJTIwZGFya3xlbnwwfHx8fDE3ODA5MDk0MjR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Black watch on a white surface, contrasting grid item"
+    },
+    "lifestyle_testimonial_1": {
+      "url": "https://images.pexels.com/photos/7518782/pexels-photo-7518782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Businessman checking watch, perfect for customer testimonials"
+    },
+    "lifestyle_testimonial_2": {
+      "url": "https://images.pexels.com/photos/14082410/pexels-photo-14082410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Person in bathrobe with wine - luxury lifestyle vibe for testimonials"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use standard React .js syntax, no TypeScript.",
+    "Implement Lenis for smooth momentum scrolling.",
+    "Use Framer Motion for scroll-triggered animations (fade up, parallax). All grid animations must target direct children.",
+    "Ensure strict adherence to the Luxury Archetype color palette: Jet Black/Slate backgrounds with Gold/Champagne primary CTA buttons.",
+    "Do NOT use standard Shadcn cards for the Featured Collection. Build a custom HTML/Tailwind bento grid with asymmetric spans (Tetris grid).",
+    "Use Phosphor Icons (@phosphor-icons/react) with Duotone weight for a high-end look.",
+    "CRITICAL: Add data-testid attributes to all interactive and key informational elements (buttons, links, form inputs, accordion triggers).",
+    "Use Shadcn UI for the FAQ accordion, but override its styles to match the dark luxury theme (no light borders, transparent backgrounds).",
+    "Ensure the hero image has a dark overlay (bg-black/50) to make text readable. Use 'Playfair Display' for Headings and 'Outfit' for Body.",
+    "Add a fixed 'WhatsApp to Order' floating button at the bottom right corner."
+  ]
+}
