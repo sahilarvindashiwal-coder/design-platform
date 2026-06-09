@@ -3,3 +3,11 @@
     background: #0a0a0a;
     color: #ffffff;
 }
+
+/* Hide Emergent watermark */
+#emergent-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
