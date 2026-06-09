@@ -5,10 +5,10 @@ import { WHATSAPP_URL } from "../data";
 
 /**
  * Hero — bag-reference style, mobile-first.
- * Two PARALLEL diagonal stripes (NOT crossing, same direction):
- *   • TIMEPIECES — ABOVE the watch, tilted -10deg
- *   • SHOP NOW   — BELOW the watch, tilted -10deg (same angle, parallel)
- *   • They are separated vertically; the watch sits in the gap between them.
+ * Two diagonal stripes in OPPOSITE directions, separated vertically
+ * so they don't visually cross:
+ *   • TIMEPIECES — ABOVE the watch, tilted -10deg (left low, right high — /)
+ *   • SHOP NOW   — BELOW the watch, tilted +10deg (left high, right low — \)
  * Watch image uses a radial mask-image so its rectangular backdrop fades
  * organically into the black hero — giving the impression it's floating.
  */
@@ -82,7 +82,7 @@ export default function Hero() {
       {/* === Bag-style composition: parallel stripes + watch === */}
       <div
         className="relative w-full mt-4 sm:mt-8 md:mt-10"
-        style={{ height: "clamp(380px, 58vh, 680px)" }}
+        style={{ height: "clamp(440px, 62vh, 720px)" }}
         data-testid="hero-composition"
       >
         {/* Faded huge ONYX wordmark behind everything */}
@@ -95,12 +95,12 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* TIMEPIECES — TOP stripe */}
+        {/* TIMEPIECES — TOP stripe (left low, right high — like /) */}
         <motion.div
-          initial={{ x: "-30%", opacity: 0, rotate: -10 }}
-          animate={{ x: 0, opacity: 1, rotate: -10 }}
+          initial={{ x: "-30%", opacity: 0, rotate: -8 }}
+          animate={{ x: 0, opacity: 1, rotate: -8 }}
           transition={{ duration: 1.1, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute left-[-8%] right-[-8%] top-[10%] sm:top-[12%] z-[2]"
+          className="absolute left-[-1%] right-[-1%] top-[5%] sm:top-[7%] z-[2]"
         >
           <div className="bg-white py-1.5 sm:py-2.5 md:py-3.5 px-3 sm:px-4 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.25)]">
             <div className="marquee">
@@ -110,12 +110,12 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* SHOP NOW — BOTTOM stripe (parallel, same direction) */}
+        {/* SHOP NOW — BOTTOM stripe (left high, right low — like \, opposite) */}
         <motion.div
-          initial={{ x: "30%", opacity: 0, rotate: -10 }}
-          animate={{ x: 0, opacity: 1, rotate: -10 }}
+          initial={{ x: "30%", opacity: 0, rotate: 8 }}
+          animate={{ x: 0, opacity: 1, rotate: 8 }}
           transition={{ duration: 1.1, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute left-[-8%] right-[-8%] bottom-[10%] sm:bottom-[12%] z-[2]"
+          className="absolute left-[-1%] right-[-1%] bottom-[5%] sm:bottom-[7%] z-[2]"
         >
           <div className="bg-white py-1.5 sm:py-2.5 md:py-3.5 px-3 sm:px-4 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.25)]">
             <div className="marquee" style={{ animationDirection: "reverse" }}>
@@ -148,12 +148,12 @@ export default function Hero() {
             <img
               src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?fit=crop&crop=center&w=900&h=900&q=90"
               alt="Luxury timepiece"
-              className="relative w-[200px] sm:w-[280px] md:w-[360px] lg:w-[420px] aspect-square object-cover"
+              className="relative w-[280px] sm:w-[360px] md:w-[440px] lg:w-[500px] aspect-square object-cover"
               style={{
                 WebkitMaskImage:
-                  "radial-gradient(circle at center, black 30%, rgba(0,0,0,0.85) 45%, transparent 72%)",
+                  "radial-gradient(circle at center, black 32%, rgba(0,0,0,0.85) 48%, transparent 74%)",
                 maskImage:
-                  "radial-gradient(circle at center, black 30%, rgba(0,0,0,0.85) 45%, transparent 72%)",
+                  "radial-gradient(circle at center, black 32%, rgba(0,0,0,0.85) 48%, transparent 74%)",
                 filter:
                   "contrast(1.1) saturate(1.1) drop-shadow(0 0 80px rgba(212,175,55,0.4))",
               }}

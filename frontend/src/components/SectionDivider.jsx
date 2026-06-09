@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 /**
- * Section divider — two PARALLEL diagonal stripes (NOT crossing, same direction).
- *   • TIMEPIECES — TOP, tilted -10deg
- *   • SHOP NOW   — BOTTOM, tilted -10deg (same angle, parallel)
- * Stripes are separated vertically; a faded "ONYX" wordmark sits behind.
- * Mobile-first: tighter padding, smaller text, contained heights.
+ * Section divider — two diagonal stripes in OPPOSITE directions, vertically
+ * separated so they don't visually cross.
+ *   • TIMEPIECES — TOP, tilted -10deg (left low, right high — /)
+ *   • SHOP NOW   — BOTTOM, tilted +10deg (left high, right low — \)
+ * A faded "ONYX" wordmark sits behind. Mobile-first sizing.
  */
 export default function SectionDivider({ id }) {
   const stripeText = (label, count = 6) => (
@@ -23,7 +23,7 @@ export default function SectionDivider({ id }) {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0a0a0a] min-h-[220px] sm:min-h-[320px] md:min-h-[400px]"
+      className="relative w-full overflow-hidden bg-[#0a0a0a] min-h-[260px] sm:min-h-[360px] md:min-h-[460px]"
       data-testid={id || "section-divider"}
     >
       {/* Faded ONYX wordmark behind */}
@@ -33,13 +33,13 @@ export default function SectionDivider({ id }) {
         </div>
       </div>
 
-      {/* TIMEPIECES — TOP stripe */}
+      {/* TIMEPIECES — TOP stripe (left low, right high — like /) */}
       <motion.div
-        initial={{ x: "-30%", opacity: 0, rotate: -10 }}
-        whileInView={{ x: 0, opacity: 1, rotate: -10 }}
+        initial={{ x: "-30%", opacity: 0, rotate: -8 }}
+        whileInView={{ x: 0, opacity: 1, rotate: -8 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-[-8%] right-[-8%] top-[16%] sm:top-[18%] z-20"
+        className="absolute left-[-1%] right-[-1%] top-[10%] sm:top-[12%] z-20"
       >
         <div className="bg-white py-1.5 sm:py-2.5 md:py-3.5 px-3 sm:px-4 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.25)]">
           <div className="marquee">
@@ -49,13 +49,13 @@ export default function SectionDivider({ id }) {
         </div>
       </motion.div>
 
-      {/* SHOP NOW — BOTTOM stripe (parallel, same direction) */}
+      {/* SHOP NOW — BOTTOM stripe (left high, right low — like \, opposite) */}
       <motion.div
-        initial={{ x: "30%", opacity: 0, rotate: -10 }}
-        whileInView={{ x: 0, opacity: 1, rotate: -10 }}
+        initial={{ x: "30%", opacity: 0, rotate: 8 }}
+        whileInView={{ x: 0, opacity: 1, rotate: 8 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-[-8%] right-[-8%] bottom-[16%] sm:bottom-[18%] z-10"
+        className="absolute left-[-1%] right-[-1%] bottom-[10%] sm:bottom-[12%] z-10"
       >
         <div className="bg-white py-1.5 sm:py-2.5 md:py-3.5 px-3 sm:px-4 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.25)]">
           <div className="marquee" style={{ animationDirection: "reverse" }}>
