@@ -1,0 +1,33 @@
+{
+  "summary": "Frontend regression + new feature testing for Atelier Onyx landing. SectionDivider feature works perfectly (all 5 dividers render with TIMEPIECES + SHOP NOW marquee stripes, faded ONYX background, no horizontal overflow at any breakpoint). All images load (RM tile + Craftsmanship parallax: naturalWidth > 0, all 8 images load). All 11 WhatsApp links correctly point to wa.me/15551234567. FAQ accordion works (aria-expanded false->true). Mobile audit at 390px passes: no horizontal overflow, trust pillars in 2-col layout, FAB visible, tooltip hidden on mobile (md:flex). However, REGRESSION 1 (Floating WhatsApp tooltip dismiss) IS STILL BROKEN — root cause identified below.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "FloatingWhatsApp",
+        "issue": "Tooltip close button click does NOT dismiss the tooltip. The 'animate-ping' <span> (className: 'absolute inset-0 bg-[#d4af37] animate-ping opacity-30') inside the FAB <a> link scales up via Tailwind's ping keyframe and overlays the close button's hit area. document.elementFromPoint() at the close button's center returns the ping <span> (NOT the close button), so real clicks hit the WhatsApp <a> link instead of triggering dismiss(). Programmatic .click() bypasses hit-testing and DOES dismiss correctly — confirming the dismiss() handler logic is fine; only the overlay is the problem. Tooltip re-appears (well, never disappears) after subsequent scrolls because the dismiss handler never fired.",
+        "selector": "[data-testid='floating-whatsapp-tooltip-close']",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Fix FloatingWhatsApp.jsx line 79: add `pointer-events-none` to the animate-ping <span>. Change `<span className=\"absolute inset-0 bg-[#d4af37] animate-ping opacity-30\" />` to `<span className=\"absolute inset-0 bg-[#d4af37] animate-ping opacity-30 pointer-events-none\" />`. This will allow the close button to actually receive click events instead of the ping overlay intercepting them."
+  ],
+  "critical_code_review_comments": [
+    "FloatingWhatsApp.jsx: animate-ping span needs pointer-events-none to avoid intercepting clicks on adjacent elements (the tooltip close button). This is the direct cause of the tooltip dismiss regression.",
+    "SectionDivider: scrollWidth ~2991px inside a 390px-wide section is fine because parent has overflow-hidden; horizontal page scroll is correctly contained. Good implementation.",
+    "data.js / Craftsmanship.jsx: replacement Unsplash images load correctly (naturalWidth=1200 confirmed)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not tested per request)", "frontend": "92% (12/13 checks passed; only tooltip dismiss regression failed)"},
+  "test_credentials": "N/A — static page, no auth",
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Most flows verified PASS: SectionDivider (5 dividers, marquee text, no overflow), all images, all wa.me links to 15551234567, FAQ accordion, mobile 390px layout (no overflow, 2-col trust pillars, FAB visible). Single outstanding issue: tooltip dismiss overlay bug — see action item. After fix, re-run only the tooltip dismiss flow at desktop viewport (1920x1080): scroll past 600px, wait 2s for tooltip, click [data-testid='floating-whatsapp-tooltip-close'], wait 1s, confirm tooltip is gone, then scroll up/down and confirm it does NOT reappear.",
+  "rca of the issue": "ROOT CAUSE: The animate-ping <span> inside the FAB <a> element uses `absolute inset-0` with Tailwind's `animate-ping` (scales to 2x). At its largest, it extends beyond the FAB's 64x64 bounds, covering the adjacent tooltip's close button. document.elementFromPoint(closeBtnCx, closeBtnCy) returns the ping span — confirming z-stack/hit-test issue. Click events therefore bubble to the parent <a> (target=_blank), which opens WhatsApp instead of dismissing the tooltip. REPRODUCTION: 1) Open page at desktop width >=768px. 2) Scroll past 600px. 3) Wait ~2s, tooltip appears. 4) Click the X close button. 5) Observe: tooltip stays visible, new WhatsApp tab/window opens. MITIGATION: Add `pointer-events-none` class to the animate-ping span. One-line fix in /app/frontend/src/components/FloatingWhatsApp.jsx line 79."
+}
