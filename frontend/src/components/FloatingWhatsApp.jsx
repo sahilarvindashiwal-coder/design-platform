@@ -76,7 +76,7 @@ export default function FloatingWhatsApp() {
             data-testid="floating-whatsapp-cta"
             aria-label="WhatsApp Order"
           >
-            <span className="absolute inset-0 bg-[#d4af37] animate-ping opacity-30" />
+            <span className="absolute inset-0 bg-[#d4af37] animate-ping opacity-30 pointer-events-none" />
             <MessageCircle className="relative w-7 h-7" strokeWidth={1.5} />
           </a>
         </motion.div>
