@@ -1,5 +1,6 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import useLenis from "./hooks/useLenis";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
@@ -16,6 +17,22 @@ import SectionDivider from "./components/SectionDivider";
 
 const Landing = () => {
   useLenis();
+
+  useEffect(() => {
+    const removeBadge = () => {
+      const badge = document.getElementById("emergent-badge");
+      if (badge) {
+        badge.remove();
+      }
+    };
+
+    removeBadge();
+
+    const interval = setInterval(removeBadge, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-[#0a0a0a] text-white min-h-screen grain" data-testid="landing-root">
       <Navigation />
