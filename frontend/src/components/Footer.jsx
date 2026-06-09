@@ -19,7 +19,7 @@ const COLS = [
 export default function Footer() {
   return (
     <footer
-      className="relative bg-black border-t border-white/5 pt-20 pb-8"
+      className="relative bg-black border-t border-white/5 pt-12 sm:pt-20 pb-8"
       data-testid="footer"
     >
       <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">

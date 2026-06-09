@@ -27,7 +27,7 @@ const PILLARS = [
 export default function TrustSection() {
   return (
     <section
-      className="relative py-28 md:py-40 bg-[#0a0a0a]"
+      className="relative py-16 sm:py-28 md:py-40 bg-[#0a0a0a]"
       data-testid="trust-section"
     >
       <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">

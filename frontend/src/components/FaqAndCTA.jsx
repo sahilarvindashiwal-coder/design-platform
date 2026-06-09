@@ -12,7 +12,7 @@ export default function FaqAndCTA() {
   return (
     <section
       id="faq"
-      className="relative py-28 md:py-40 bg-[#0a0a0a]"
+      className="relative py-16 sm:py-28 md:py-40 bg-[#0a0a0a]"
       data-testid="faq-section"
     >
       <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
@@ -106,7 +106,7 @@ export default function FaqAndCTA() {
             <span className="h-px w-12 bg-[#d4af37]" />
           </div>
           <h2
-            className="serif text-white text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight"
+            className="serif text-white text-4xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-[0.92] tracking-tight"
             data-testid="final-cta-heading"
           >
             Find your

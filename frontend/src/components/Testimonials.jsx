@@ -14,7 +14,7 @@ export default function Testimonials() {
   return (
     <section
       id="stories"
-      className="relative py-28 md:py-40 bg-gradient-to-b from-[#0a0a0a] via-[#0d0a05] to-[#0a0a0a] overflow-hidden"
+      className="relative py-16 sm:py-28 md:py-40 bg-gradient-to-b from-[#0a0a0a] via-[#0d0a05] to-[#0a0a0a] overflow-hidden"
       data-testid="testimonials-section"
     >
       {/* Background subtle gold haze */}
@@ -100,7 +100,7 @@ export default function Testimonials() {
                     />
                   ))}
                 </div>
-                <p className="serif text-white text-2xl md:text-3xl lg:text-4xl leading-[1.3] font-light">
+                <p className="serif text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.35] font-light">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="mt-12 flex items-center gap-4">

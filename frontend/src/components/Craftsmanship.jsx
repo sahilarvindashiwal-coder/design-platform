@@ -69,8 +69,8 @@ export default function Craftsmanship() {
       </div>
 
       {/* Detail grid */}
-      <div className="relative max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20 py-24 md:py-32 border-t border-white/5">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
+      <div className="relative max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20 py-16 sm:py-24 md:py-32 border-t border-white/5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 sm:gap-x-12 gap-y-10 sm:gap-y-16">
           {DETAILS.map((d, i) => (
             <motion.div
               key={d.n}
@@ -80,14 +80,14 @@ export default function Craftsmanship() {
               transition={{ duration: 0.7, delay: i * 0.08 }}
               data-testid={`detail-${d.n}`}
             >
-              <div className="serif text-[#d4af37] text-5xl mb-4 italic">
+              <div className="serif text-[#d4af37] text-4xl sm:text-5xl mb-3 sm:mb-4 italic">
                 {d.n}
               </div>
-              <div className="h-px w-12 bg-white/15 mb-4" />
-              <h3 className="serif text-white text-xl md:text-2xl mb-3 leading-tight">
+              <div className="h-px w-10 sm:w-12 bg-white/15 mb-3 sm:mb-4" />
+              <h3 className="serif text-white text-base sm:text-xl md:text-2xl mb-2 sm:mb-3 leading-tight">
                 {d.label}
               </h3>
-              <p className="text-white/55 text-sm leading-relaxed">{d.desc}</p>
+              <p className="text-white/55 text-xs sm:text-sm leading-relaxed">{d.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -27,7 +27,7 @@ export default function HowToOrder() {
   return (
     <section
       id="process"
-      className="relative py-28 md:py-40 bg-[#0a0a0a]"
+      className="relative py-16 sm:py-28 md:py-40 bg-[#0a0a0a]"
       data-testid="process-section"
     >
       <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
@@ -78,23 +78,23 @@ export default function HowToOrder() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: i * 0.12 }}
-              className="group relative bg-[#0a0a0a] p-10 md:p-12 hover:bg-[#0f0f0f] transition-colors duration-500"
+              className="group relative bg-[#0a0a0a] p-6 sm:p-10 md:p-12 hover:bg-[#0f0f0f] transition-colors duration-500"
               data-testid={`order-step-${i + 1}`}
             >
-              <div className="flex items-start justify-between mb-12">
-                <span className="serif italic text-[#d4af37] text-6xl">
+              <div className="flex items-start justify-between mb-8 sm:mb-12">
+                <span className="serif italic text-[#d4af37] text-5xl sm:text-6xl">
                   {s.n}
                 </span>
                 <s.icon
-                  className="w-7 h-7 text-white/40 group-hover:text-[#d4af37] transition-colors duration-500"
+                  className="w-6 h-6 sm:w-7 sm:h-7 text-white/40 group-hover:text-[#d4af37] transition-colors duration-500"
                   strokeWidth={1.3}
                 />
               </div>
-              <h3 className="serif text-white text-2xl md:text-3xl mb-4 leading-tight">
+              <h3 className="serif text-white text-xl sm:text-2xl md:text-3xl mb-3 sm:mb-4 leading-tight">
                 {s.title}
               </h3>
               <p className="text-white/55 text-sm leading-relaxed">{s.desc}</p>
-              <div className="mt-8 h-px w-8 bg-white/10 group-hover:w-20 group-hover:bg-[#d4af37] transition-all duration-700" />
+              <div className="mt-6 sm:mt-8 h-px w-8 bg-white/10 group-hover:w-20 group-hover:bg-[#d4af37] transition-all duration-700" />
             </motion.div>
           ))}
         </div>

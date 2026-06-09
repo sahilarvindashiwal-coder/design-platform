@@ -6,7 +6,7 @@ export default function Collection() {
   return (
     <section
       id="collection"
-      className="relative py-28 md:py-40 bg-[#0a0a0a]"
+      className="relative py-16 sm:py-28 md:py-40 bg-[#0a0a0a]"
       data-testid="collection-section"
     >
       <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
