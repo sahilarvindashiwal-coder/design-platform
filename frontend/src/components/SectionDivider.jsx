@@ -38,16 +38,15 @@ export default function SectionDivider({ id }) {
         </div>
       </div>
 
-      {/* Stripe going up-right (rotate -10deg) — TIMEPIECES */}
+      {/* Stripe going up-right (rotate -22deg) — TIMEPIECES */}
       <motion.div
-        initial={{ x: "-30%", opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: "-30%", opacity: 0, rotate: -22 }}
+        whileInView={{ x: 0, opacity: 1, rotate: -22 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-[-15%] right-[-15%] top-[30%] z-20"
-        style={{ transform: "rotate(-10deg)" }}
+        className="absolute left-[-25%] right-[-25%] top-1/2 -mt-[26px] sm:-mt-[36px] md:-mt-[44px] z-20"
       >
-        <div className="bg-white py-2 sm:py-4 md:py-5 px-6 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.2)]">
+        <div className="bg-white py-2 sm:py-3 md:py-4 px-4 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.25)]">
           <div className="marquee">
             {stripeText("TIMEPIECES")}
             {stripeText("TIMEPIECES")}
@@ -55,16 +54,15 @@ export default function SectionDivider({ id }) {
         </div>
       </motion.div>
 
-      {/* Stripe going down-right (rotate +10deg) — SHOP NOW */}
+      {/* Stripe going down-right (rotate +22deg) — SHOP NOW */}
       <motion.div
-        initial={{ x: "30%", opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: "30%", opacity: 0, rotate: 22 }}
+        whileInView={{ x: 0, opacity: 1, rotate: 22 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-[-15%] right-[-15%] top-[55%] z-10"
-        style={{ transform: "rotate(10deg)" }}
+        className="absolute left-[-25%] right-[-25%] top-1/2 -mt-[26px] sm:-mt-[36px] md:-mt-[44px] z-10"
       >
-        <div className="bg-white py-2 sm:py-4 md:py-5 px-6 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.2)]">
+        <div className="bg-white py-2 sm:py-3 md:py-4 px-4 shadow-[0_30px_80px_-20px_rgba(255,255,255,0.25)]">
           <div className="marquee" style={{ animationDirection: "reverse" }}>
             {stripeText("SHOP NOW")}
             {stripeText("SHOP NOW")}

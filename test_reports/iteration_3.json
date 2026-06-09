@@ -1,0 +1,25 @@
+{
+  "summary": "Frontend-only regression test of Atelier Onyx landing (iter3). ALL key flows pass. Hero composition matches the bag-reference brief: watch image floats above TWO crossing diagonal stripes — TIMEPIECES at rotation=-22.0deg and SHOP NOW at +22.0deg — with faded ONYX wordmark behind and headline 'Time, faithfully re·imagined.' below the composition. All 5 SectionDivider instances render correctly with both stripes at -22/+22 degrees (framer-motion rotate prop fix verified). Mobile-first audit at 390px passes: no horizontal overflow, hero composition fully readable, trust pillars 2-col, collection bento single-col, hamburger menu opens overlay with all 5 sections + WhatsApp CTA, FAB visible at (302,756). REGRESSION FIXED: floating-whatsapp-tooltip-close now correctly dismisses the tooltip (real click works) and tooltip stays dismissed on subsequent scrolls — pointer-events-none fix on animate-ping span confirmed effective. All 12 wa.me CTAs point to 15551234567. All 5 collection bento images load (naturalWidth=1200). FAQ accordion expands. ZERO console errors at desktop and mobile.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Hero.jsx & SectionDivider.jsx: the framer-motion fix is correct — `rotate` is now passed inside initial/animate/whileInView objects so it's composed into the same transform as `x`. Computed transforms confirm both stripes are visible at exactly -22deg and +22deg on desktop and mobile. Good fix.",
+    "Minor (non-blocking): FAQ accordion buttons inside faq-accordion-item-N do not expose their own `faq-toggle-*` data-testid on the inner <button>. Items themselves have data-testid but tests targeting the toggle directly must fall back to `[data-testid='faq-accordion-item-N'] button`. Consider adding data-testid to the button child for cleaner test selectors.",
+    "Minor (non-blocking): the mobile menu overlay does not have a top-level `data-testid='mobile-menu'`. The hamburger toggle (`md:hidden` button) and individual mobile-nav-*-link testids exist, but a wrapping testid on the open overlay would simplify test assertions.",
+    "All 12 WhatsApp anchors share the exact same href — good consistency."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100% (all 8 requested checks passed)"},
+  "test_credentials": "N/A — static page, no auth",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Iteration 3 is fully green. Validated: (1) Hero bag-style composition with watch + crossing diagonal stripes at exact -22/+22deg (2) all 5 SectionDivider instances render both stripes at -22/+22deg, (3) mobile 390px: no horizontal overflow, trust 2-col, collection 1-col, hamburger opens menu overlay with 5 section links + WhatsApp CTA, FAB visible, (4) tooltip dismiss regression fixed (pointer-events-none on ping span), (5) all 12 wa.me links to 15551234567, (6) 5/5 collection images load, (7) FAQ accordion expands, (8) zero console errors. No outstanding issues for main agent. Optional micro-polish suggestions are in critical_code_review_comments but none are blockers.",
+  "rca of the issue": "N/A — no defects in this iteration."
+}
