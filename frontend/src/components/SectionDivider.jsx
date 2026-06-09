@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 /**
- * Section divider — two PARALLEL diagonal stripes (NOT crossing).
- *   • TIMEPIECES — TOP, tilted -12deg (left→right ascending)
- *   • SHOP NOW   — BOTTOM, tilted +12deg (right→left ascending)
+ * Section divider — two PARALLEL diagonal stripes (NOT crossing, same direction).
+ *   • TIMEPIECES — TOP, tilted -10deg
+ *   • SHOP NOW   — BOTTOM, tilted -10deg (same angle, parallel)
  * Stripes are separated vertically; a faded "ONYX" wordmark sits behind.
  * Mobile-first: tighter padding, smaller text, contained heights.
  */

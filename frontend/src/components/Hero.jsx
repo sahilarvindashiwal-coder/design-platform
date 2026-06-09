@@ -5,12 +5,12 @@ import { WHATSAPP_URL } from "../data";
 
 /**
  * Hero — bag-reference style, mobile-first.
- * Two PARALLEL diagonal stripes (not crossing):
- *   • TIMEPIECES — ABOVE the watch, tilted -12deg (left→right ascending)
- *   • SHOP NOW   — BELOW the watch, tilted +12deg (opposite direction)
+ * Two PARALLEL diagonal stripes (NOT crossing, same direction):
+ *   • TIMEPIECES — ABOVE the watch, tilted -10deg
+ *   • SHOP NOW   — BELOW the watch, tilted -10deg (same angle, parallel)
  *   • They are separated vertically; the watch sits in the gap between them.
- * Watch image is shown with mix-blend-mode:lighten so its dark backdrop
- * bleeds into the black hero — giving the impression it's floating.
+ * Watch image uses a radial mask-image so its rectangular backdrop fades
+ * organically into the black hero — giving the impression it's floating.
  */
 export default function Hero() {
   const ref = useRef(null);
