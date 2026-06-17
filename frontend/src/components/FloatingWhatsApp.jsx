@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
-import { WHATSAPP_URL } from "../data";
+import { WHATSAPP_URL, BRAND } from "../data";
+import { BRAND_COLORS } from "../constants/theme";
 
 export default function FloatingWhatsApp() {
   const [show, setShow] = useState(false);
@@ -33,7 +34,8 @@ export default function FloatingWhatsApp() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 60, scale: 0.8 }}
           transition={{ duration: 0.4 }}
-          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 flex items-end gap-3"
+          className="fixed bottom-5 z-40 flex items-end gap-3"
+          style={{ right: "max(1rem, calc(50% - 199px))" }}
           data-testid="floating-whatsapp"
         >
           <AnimatePresence>
@@ -47,8 +49,8 @@ export default function FloatingWhatsApp() {
                 data-testid="floating-whatsapp-tooltip"
               >
                 <div className="pr-3">
-                  <div className="text-[10px] uppercase tracking-[0.25em] text-[#9a8025]">
-                    Atelier Onyx
+                  <div className="text-[10px] uppercase tracking-[0.25em] text-black/50 font-bold">
+                    {BRAND}
                   </div>
                   <div className="text-sm mt-1 leading-snug">
                     Hi 👋 Looking for a specific reference? Chat with our
@@ -61,7 +63,7 @@ export default function FloatingWhatsApp() {
                   aria-label="Close"
                   data-testid="floating-whatsapp-tooltip-close"
                 >
-                  <X className="w-4 h-4" strokeWidth={1.6} />
+                  <X className="w-4 h-4" strokeWidth={2} />
                 </button>
                 <span className="absolute -right-2 bottom-5 w-3 h-3 bg-white rotate-45" />
               </motion.div>
@@ -72,12 +74,16 @@ export default function FloatingWhatsApp() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="group relative w-16 h-16 bg-[#d4af37] hover:bg-white text-black flex items-center justify-center shadow-[0_10px_40px_-10px_rgba(212,175,55,0.6)] transition-all"
+            className="group relative w-14 h-14 hover:brightness-110 text-black flex items-center justify-center shadow-[0_10px_40px_-10px_rgba(255,235,59,0.6)] transition-all"
+            style={{ backgroundColor: BRAND_COLORS.yellow }}
             data-testid="floating-whatsapp-cta"
             aria-label="WhatsApp Order"
           >
-            <span className="absolute inset-0 bg-[#d4af37] animate-ping opacity-30 pointer-events-none" />
-            <MessageCircle className="relative w-7 h-7" strokeWidth={1.5} />
+            <span
+              className="absolute inset-0 animate-ping opacity-30 pointer-events-none"
+              style={{ backgroundColor: BRAND_COLORS.yellow }}
+            />
+            <MessageCircle className="relative w-6 h-6 sm:w-7 sm:h-7" strokeWidth={1.5} />
           </a>
         </motion.div>
       )}

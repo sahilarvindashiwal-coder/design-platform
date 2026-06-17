@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL, BRAND } from "../data";
+import { Menu, X } from "lucide-react";
+import BrandLogo from "./BrandLogo";
+import { WHATSAPP_URL } from "../data";
+import { BRAND_COLORS } from "../constants/theme";
 
 const links = [
   { label: "Collection", id: "collection" },
@@ -16,10 +18,17 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -29,96 +38,100 @@ export default function Navigation() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-black/70 backdrop-blur-xl border-b border-white/5 py-4"
-            : "bg-transparent py-6"
-        }`}
+      <header
+        className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-[430px]"
         data-testid="main-nav"
       >
-        <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between">
+        <motion.nav
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className={`h-14 flex items-center justify-between px-4 transition-colors duration-300 ${
+            scrolled || open
+              ? "bg-black/95 backdrop-blur-md border-b border-white/10"
+              : "bg-black/40 backdrop-blur-sm"
+          }`}
+        >
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="serif text-2xl tracking-tight text-white"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setOpen(false);
+            }}
+            className="flex-shrink-0"
             data-testid="nav-brand-link"
+            aria-label="Designer Vault home"
           >
-            {BRAND.split(" ")[0]}
-            <span className="text-[#d4af37]">.</span>
-            <span className="font-light italic"> {BRAND.split(" ")[1]}</span>
+            <BrandLogo size="sm" />
           </button>
 
-          <div className="hidden lg:flex items-center gap-10">
-            {links.map((l) => (
-              <button
-                key={l.id}
-                onClick={() => scrollTo(l.id)}
-                className="text-sm uppercase tracking-[0.2em] text-white/70 hover:text-[#d4af37] transition-colors duration-300"
-                data-testid={`nav-${l.id}-link`}
-              >
-                {l.label}
-              </button>
-            ))}
-          </div>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="flex-shrink-0 w-10 h-10 flex items-center justify-end"
+            data-testid="nav-mobile-toggle"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            {open ? (
+              <X size={24} style={{ color: BRAND_COLORS.yellow }} />
+            ) : (
+              <Menu size={24} style={{ color: BRAND_COLORS.yellow }} />
+            )}
+          </button>
+        </motion.nav>
 
-          <div className="flex items-center gap-3">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden md:inline-flex items-center gap-2 bg-[#d4af37] hover:bg-[#e5c158] text-black px-5 py-2.5 text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 hover:gap-3"
-              data-testid="nav-whatsapp-cta"
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="overflow-hidden bg-black/98 backdrop-blur-xl border-b border-white/10"
+              data-testid="mobile-menu"
             >
-              <MessageCircle className="w-4 h-4" strokeWidth={1.6} />
-              WhatsApp Order
-            </a>
-            <button
-              className="lg:hidden text-white"
-              onClick={() => setOpen(!open)}
-              data-testid="nav-mobile-toggle"
-              aria-label="Toggle menu"
-            >
-              {open ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
-        </div>
-      </motion.nav>
+              <nav className="px-4 py-3 flex flex-col">
+                {links.map((l, i) => (
+                  <motion.button
+                    key={l.id}
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.04 }}
+                    onClick={() => scrollTo(l.id)}
+                    className="display text-left text-xl text-white uppercase py-3.5 border-b border-white/10 last:border-b-0 hover:text-[#FFEB3B] transition-colors"
+                    data-testid={`mobile-nav-${l.id}-link`}
+                  >
+                    {l.label}
+                  </motion.button>
+                ))}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 mb-1 text-center text-black px-6 py-3.5 text-[10px] uppercase tracking-[0.2em] font-bold"
+                  style={{ backgroundColor: BRAND_COLORS.yellow }}
+                  data-testid="mobile-whatsapp-cta"
+                  onClick={() => setOpen(false)}
+                >
+                  WhatsApp Order
+                </a>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black lg:hidden flex flex-col items-center justify-center gap-8"
-            data-testid="mobile-menu"
-          >
-            {links.map((l, i) => (
-              <motion.button
-                key={l.id}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: i * 0.05 }}
-                onClick={() => scrollTo(l.id)}
-                className="serif text-4xl text-white"
-                data-testid={`mobile-nav-${l.id}-link`}
-              >
-                {l.label}
-              </motion.button>
-            ))}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 bg-[#d4af37] text-black px-8 py-4 text-sm uppercase tracking-[0.2em] font-semibold"
-              data-testid="mobile-whatsapp-cta"
-            >
-              WhatsApp Order
-            </a>
-          </motion.div>
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/60"
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            data-testid="mobile-menu-backdrop"
+          />
         )}
       </AnimatePresence>
     </>

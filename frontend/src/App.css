@@ -1,10 +1,8 @@
-/* App-level overrides intentionally minimal — design lives in index.css + tailwind */
 .App {
-    background: #0a0a0a;
+    background: #000000;
     color: #ffffff;
 }
 
-/* Hide Emergent watermark */
 #emergent-badge {
     display: none !important;
     visibility: hidden !important;

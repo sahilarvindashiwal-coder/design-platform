@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, ShoppingBag, PackageCheck } from "lucide-react";
 import { WHATSAPP_URL } from "../data";
+import { BRAND_COLORS } from "../constants/theme";
 
 const STEPS = [
   {
@@ -27,50 +28,35 @@ export default function HowToOrder() {
   return (
     <section
       id="process"
-      className="relative py-16 sm:py-28 md:py-40 bg-[#0a0a0a]"
+      className="relative py-12 bg-transparent"
       data-testid="process-section"
     >
-      <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid md:grid-cols-12 gap-12 items-end mb-16">
-          <div className="md:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <span className="h-px w-12 bg-[#d4af37]" />
-              <span className="text-xs uppercase tracking-[0.3em] text-[#d4af37]">
-                How to Order
-              </span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9 }}
-              className="serif text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight"
-              data-testid="process-heading"
-            >
-              Three taps.
-              <span className="italic font-light"> Zero friction.</span>
-            </motion.h2>
-          </div>
-          <motion.p
+      <div className="px-4">
+        <div className="text-center mb-8 content-panel px-5 py-6">
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="md:col-span-5 text-white/55 text-sm md:text-base leading-relaxed"
+            className="text-[10px] uppercase tracking-[0.3em] font-bold"
+            style={{ color: BRAND_COLORS.yellow }}
           >
-            No accounts, no carts, no abandoned-checkout emails. Just a
-            conversation with a real horologist on WhatsApp — the way bespoke
-            ought to feel.
-          </motion.p>
+            How to Order
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="mt-3 display font-black text-white text-3xl leading-[0.95] tracking-tight uppercase"
+            data-testid="process-heading"
+          >
+            Three Taps.
+            <br />
+            <span className="text-accent">Zero Friction.</span>
+          </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
+        <div className="flex flex-col gap-3">
           {STEPS.map((s, i) => (
             <motion.div
               key={s.n}
@@ -78,23 +64,26 @@ export default function HowToOrder() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: i * 0.12 }}
-              className="group relative bg-[#0a0a0a] p-6 sm:p-10 md:p-12 hover:bg-[#0f0f0f] transition-colors duration-500"
+              className="group relative content-panel p-5 hover:bg-black transition-colors duration-500"
               data-testid={`order-step-${i + 1}`}
             >
-              <div className="flex items-start justify-between mb-8 sm:mb-12">
-                <span className="serif italic text-[#d4af37] text-5xl sm:text-6xl">
+              <div className="flex items-start justify-between mb-6">
+                <span
+                  className="display text-4xl font-black"
+                  style={{ color: BRAND_COLORS.yellow }}
+                >
                   {s.n}
                 </span>
                 <s.icon
-                  className="w-6 h-6 sm:w-7 sm:h-7 text-white/40 group-hover:text-[#d4af37] transition-colors duration-500"
-                  strokeWidth={1.3}
+                  className="w-6 h-6 text-white/60 group-hover:text-[#FFEB3B] transition-colors duration-500"
+                  strokeWidth={1.5}
                 />
               </div>
-              <h3 className="serif text-white text-xl sm:text-2xl md:text-3xl mb-3 sm:mb-4 leading-tight">
+              <h3 className="display text-white text-lg mb-2 leading-tight uppercase">
                 {s.title}
               </h3>
-              <p className="text-white/55 text-sm leading-relaxed">{s.desc}</p>
-              <div className="mt-6 sm:mt-8 h-px w-8 bg-white/10 group-hover:w-20 group-hover:bg-[#d4af37] transition-all duration-700" />
+              <p className="text-white/85 text-sm leading-relaxed">{s.desc}</p>
+              <div className="mt-5 h-px w-8 bg-white/20 group-hover:w-16 group-hover:bg-[#FFEB3B] transition-all duration-700" />
             </motion.div>
           ))}
         </div>
@@ -104,18 +93,18 @@ export default function HowToOrder() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-16 flex justify-center"
+          className="mt-8 flex justify-center"
         >
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 bg-[#d4af37] hover:bg-white text-black px-8 py-4 text-xs uppercase tracking-[0.25em] font-semibold transition-all"
+            className="inline-flex items-center gap-3 hover:brightness-110 text-black px-8 py-4 text-[10px] uppercase tracking-[0.25em] font-bold transition-all w-full justify-center"
+            style={{ backgroundColor: BRAND_COLORS.yellow }}
             data-testid="process-whatsapp-cta"
           >
-            <MessageCircle className="w-4 h-4" strokeWidth={1.6} />
+            <MessageCircle className="w-4 h-4" strokeWidth={2} />
             Start your order
-            <span className="w-6 h-px bg-black group-hover:w-12 transition-all" />
           </a>
         </motion.div>
       </div>

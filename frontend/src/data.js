@@ -1,11 +1,11 @@
 // Phone number for WhatsApp orders - placeholder
 export const WHATSAPP_NUMBER = "15551234567";
 export const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hi Atelier Onyx, I'd like to enquire about your timepieces."
+  "Hi Designer Vault, I'd like to enquire about your timepieces."
 );
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
-export const BRAND = "Atelier Onyx";
+export const BRAND = "Designer Vault";
 
 export const COLLECTION = [
   {
@@ -13,7 +13,7 @@ export const COLLECTION = [
     name: "Rolex",
     model: "Submariner Date",
     price: "from $389",
-    span: "md:col-span-7 md:row-span-2",
+    span: "md:col-span-4",
     img: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
     tag: "Iconic Diver",
   },
@@ -22,7 +22,7 @@ export const COLLECTION = [
     name: "Audemars Piguet",
     model: "Royal Oak 41mm",
     price: "from $429",
-    span: "md:col-span-5 md:row-span-1",
+    span: "md:col-span-4",
     img: "https://images.unsplash.com/photo-1611243705491-71487c2ed137?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
     tag: "Octagonal Heritage",
   },
@@ -31,7 +31,7 @@ export const COLLECTION = [
     name: "Patek Philippe",
     model: "Nautilus 5711",
     price: "from $479",
-    span: "md:col-span-5 md:row-span-1",
+    span: "md:col-span-4",
     img: "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
     tag: "Holy Grail",
   },
@@ -40,7 +40,7 @@ export const COLLECTION = [
     name: "Omega",
     model: "Speedmaster Moonwatch",
     price: "from $329",
-    span: "md:col-span-6 md:row-span-1",
+    span: "md:col-span-6",
     img: "https://images.unsplash.com/photo-1662384197911-e82189f4dc60?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
     tag: "Lunar Legend",
   },
@@ -49,7 +49,7 @@ export const COLLECTION = [
     name: "Richard Mille",
     model: "RM 11-03",
     price: "from $549",
-    span: "md:col-span-6 md:row-span-1",
+    span: "md:col-span-6",
     img: "https://images.unsplash.com/photo-1495856458515-0637185db551?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
     tag: "Avant-Garde",
   },
@@ -70,7 +70,7 @@ export const TESTIMONIALS = [
     name: "Daniel K.",
     location: "Dubai, UAE",
     quote:
-      "Third piece from Atelier Onyx. The Royal Oak's tapisserie dial is mesmerising and the movement keeps perfect time. Worth every dollar.",
+      "Third piece from Designer Vault. The Royal Oak's tapisserie dial is mesmerising and the movement keeps perfect time. Worth every dollar.",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85&w=400",
