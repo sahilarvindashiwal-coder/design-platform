@@ -17,56 +17,67 @@ import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import SectionDivider from "./components/SectionDivider";
 
 const Landing = () => {
-  useLenis();
+useLenis();
 
-  useEffect(() => {
-    const removeBadge = () => {
-      const badge = document.getElementById("emergent-badge");
-      if (badge) badge.remove();
-    };
-    removeBadge();
-    const interval = setInterval(removeBadge, 1000);
-    return () => clearInterval(interval);
-  }, []);
+useEffect(() => {
+const removeEmergentBadge = () => {
+// Remove by ID
+document.getElementById("emergent-badge")?.remove();
 
-  return (
-    <div
-      className="site-bg text-white min-h-screen relative"
-      style={{ backgroundImage: `url(${ASSETS.bgEntire})` }}
-      data-testid="landing-root"
-    >
-      <div className="mobile-shell">
-        <Navigation />
-        <Hero />
-        <BrandMarquee />
-        <TrustSection />
-        <SectionDivider id="divider-after-trust" />
-        <Collection />
-        <SectionDivider id="divider-after-collection" />
-        <Craftsmanship />
-        <SectionDivider id="divider-after-craft" />
-        <HowToOrder />
-        <SectionDivider id="divider-after-process" />
-        <Testimonials />
-        <SectionDivider id="divider-after-stories" />
-        <FaqAndCTA />
-        <Footer />
-        <FloatingWhatsApp />
-      </div>
-    </div>
-  );
+```
+  // Remove by link target
+  document.querySelectorAll('a[href*="app.emergent.sh"]').forEach((el) => {
+    el.remove();
+  });
+
+  // Remove by text content
+  document.querySelectorAll("a, div, p, span").forEach((el) => {
+    if (
+      el.textContent &&
+      el.textContent.trim().includes("Made with Emergent")
+    ) {
+      el.remove();
+    }
+  });
+};
+
+// Initial removal
+removeEmergentBadge();
+
+// Keep checking in case it gets injected later
+const interval = setInterval(removeEmergentBadge, 500);
+
+// Watch DOM for new elements
+const observer = new MutationObserver(() => {
+  removeEmergentBadge();
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});
+
+return () => {
+  clearInterval(interval);
+  observer.disconnect();
+};
+```
+
+}, []);
+
+return (
+<div
+className="site-bg text-white min-h-screen relative"
+style={{ backgroundImage: `url(${ASSETS.bgEntire})` }}
+data-testid="landing-root"
+> <div className="mobile-shell"> <Navigation /> <Hero /> <BrandMarquee /> <TrustSection /> <SectionDivider id="divider-after-trust" /> <Collection /> <SectionDivider id="divider-after-collection" /> <Craftsmanship /> <SectionDivider id="divider-after-craft" /> <HowToOrder /> <SectionDivider id="divider-after-process" /> <Testimonials /> <SectionDivider id="divider-after-stories" /> <FaqAndCTA /> <Footer /> <FloatingWhatsApp /> </div> </div>
+);
 };
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+return ( <div className="App"> <BrowserRouter basename={process.env.PUBLIC_URL}> <Routes>
+<Route path="/" element={<Landing />} /> </Routes> </BrowserRouter> </div>
+);
 }
 
 export default App;
