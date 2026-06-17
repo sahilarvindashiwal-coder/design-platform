@@ -20,47 +20,20 @@ const Landing = () => {
 useLenis();
 
 useEffect(() => {
-const removeEmergentBadge = () => {
-// Remove by ID
+const removeBadge = () => {
 document.getElementById("emergent-badge")?.remove();
 
 ```
-  // Remove by link target
-  document.querySelectorAll('a[href*="app.emergent.sh"]').forEach((el) => {
-    el.remove();
-  });
-
-  // Remove by text content
-  document.querySelectorAll("a, div, p, span").forEach((el) => {
-    if (
-      el.textContent &&
-      el.textContent.trim().includes("Made with Emergent")
-    ) {
-      el.remove();
-    }
-  });
+  document
+    .querySelectorAll('a[href*="app.emergent.sh"]')
+    .forEach((el) => el.remove());
 };
 
-// Initial removal
-removeEmergentBadge();
+removeBadge();
 
-// Keep checking in case it gets injected later
-const interval = setInterval(removeEmergentBadge, 500);
+const interval = setInterval(removeBadge, 1000);
 
-// Watch DOM for new elements
-const observer = new MutationObserver(() => {
-  removeEmergentBadge();
-});
-
-observer.observe(document.body, {
-  childList: true,
-  subtree: true,
-});
-
-return () => {
-  clearInterval(interval);
-  observer.disconnect();
-};
+return () => clearInterval(interval);
 ```
 
 }, []);
