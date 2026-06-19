@@ -67,7 +67,7 @@ const Landing = () => {
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL || undefined}>
         <Routes>
           <Route path="/" element={<Landing />} />
         </Routes>

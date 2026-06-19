@@ -30,6 +30,8 @@ jobs:
 
       - name: Install and build
         working-directory: frontend
+        env:
+          PUBLIC_URL: /design-platform
         run: |
           yarn install --frozen-lockfile
           yarn build
