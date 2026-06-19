@@ -23,7 +23,7 @@ useEffect(() => {
 const removeBadge = () => {
 document.getElementById("emergent-badge")?.remove();
 
-```
+
   document
     .querySelectorAll('a[href*="app.emergent.sh"]')
     .forEach((el) => el.remove());
@@ -34,7 +34,7 @@ removeBadge();
 const interval = setInterval(removeBadge, 1000);
 
 return () => clearInterval(interval);
-```
+
 
 }, []);
 
