@@ -3,9 +3,16 @@
     color: #ffffff;
 }
 
-#emergent-badge {
+/* Block Emergent branding if injected at runtime */
+#emergent-badge,
+a[href*="emergent.sh"],
+a[href*="app.emergent.sh"],
+[data-emergent-badge] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
