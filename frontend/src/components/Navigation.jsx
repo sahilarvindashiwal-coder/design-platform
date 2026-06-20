@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import BrandLogo from "./BrandLogo";
 import { WHATSAPP_URL } from "../data";
 import { BRAND_COLORS } from "../constants/theme";
 
-const links = [
+const sectionLinks = [
   { label: "Collection", id: "collection" },
   { label: "Craftsmanship", id: "craft" },
   { label: "Process", id: "process" },
@@ -16,6 +17,12 @@ const links = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+  const isProducts =
+    location.pathname === "/products" ||
+    location.pathname.startsWith("/products/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,10 +37,14 @@ export default function Navigation() {
     };
   }, [open]);
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  const scrollToSection = (id) => {
     setOpen(false);
+    if (isHome) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      navigate(`/#${id}`);
+    }
   };
 
   return (
@@ -52,17 +63,15 @@ export default function Navigation() {
               : "bg-black/40 backdrop-blur-sm"
           }`}
         >
-          <button
-            onClick={() => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-              setOpen(false);
-            }}
+          <Link
+            to="/"
+            onClick={() => setOpen(false)}
             className="flex-shrink-0"
             data-testid="nav-brand-link"
             aria-label="Designer Vault home"
           >
             <BrandLogo size="sm" />
-          </button>
+          </Link>
 
           <button
             onClick={() => setOpen((v) => !v)}
@@ -90,13 +99,23 @@ export default function Navigation() {
               data-testid="mobile-menu"
             >
               <nav className="px-4 py-3 flex flex-col">
-                {links.map((l, i) => (
+                <Link
+                  to="/products"
+                  onClick={() => setOpen(false)}
+                  className={`display text-left text-xl uppercase py-3.5 border-b border-white/10 transition-colors ${
+                    isProducts ? "text-[#FFEB3B]" : "text-white hover:text-[#FFEB3B]"
+                  }`}
+                  data-testid="mobile-nav-products-link"
+                >
+                  Products
+                </Link>
+                {sectionLinks.map((l, i) => (
                   <motion.button
                     key={l.id}
                     initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04 }}
-                    onClick={() => scrollTo(l.id)}
+                    transition={{ delay: (i + 1) * 0.04 }}
+                    onClick={() => scrollToSection(l.id)}
                     className="display text-left text-xl text-white uppercase py-3.5 border-b border-white/10 last:border-b-0 hover:text-[#FFEB3B] transition-colors"
                     data-testid={`mobile-nav-${l.id}-link`}
                   >
@@ -112,7 +131,7 @@ export default function Navigation() {
                   data-testid="mobile-whatsapp-cta"
                   onClick={() => setOpen(false)}
                 >
-                  WhatsApp Order
+                  Order Now
                 </a>
               </nav>
             </motion.div>

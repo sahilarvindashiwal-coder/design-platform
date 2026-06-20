@@ -7,20 +7,20 @@ const STEPS = [
   {
     n: "01",
     icon: MessageCircle,
-    title: "Message us on WhatsApp",
-    desc: "Tell us which reference catches your eye. Share photos if you've seen one elsewhere — we'll quote on the spot.",
+    title: "Tell Us What You Want",
+    desc: "Share the bag, watch, shoe, or eyewear you're after — or send a photo. We'll quote availability and price on the spot.",
   },
   {
     n: "02",
     icon: ShoppingBag,
     title: "Confirm & Pay Securely",
-    desc: "We send a payment link (card, bank transfer, or USDT). Funds clear within minutes, your watch enters our QC bench within hours.",
+    desc: "We send a secure payment link (card, bank transfer, or USDT). Your order enters our QC bench within hours of payment.",
   },
   {
     n: "03",
     icon: PackageCheck,
-    title: "Receive — Discreetly",
-    desc: "Tracked, insured shipping in unbranded packaging. Most parcels land in 7–10 working days. A real human checks in on day one.",
+    title: "Approve QC & Receive",
+    desc: "We send pre-ship photos for your approval. Then tracked, insured delivery in discreet packaging — usually 7–10 working days.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function HowToOrder() {
             className="mt-3 display font-black text-white text-3xl leading-[0.95] tracking-tight uppercase"
             data-testid="process-heading"
           >
-            Three Taps.
+            Three Steps.
             <br />
             <span className="text-accent">Zero Friction.</span>
           </motion.h2>
@@ -104,7 +104,7 @@ export default function HowToOrder() {
             data-testid="process-whatsapp-cta"
           >
             <MessageCircle className="w-4 h-4" strokeWidth={2} />
-            Start your order
+            Order Now
           </a>
         </motion.div>
       </div>

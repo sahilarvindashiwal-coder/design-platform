@@ -53,8 +53,7 @@ export default function FloatingWhatsApp() {
                     {BRAND}
                   </div>
                   <div className="text-sm mt-1 leading-snug">
-                    Hi 👋 Looking for a specific reference? Chat with our
-                    horologist now.
+                    Hi 👋 Looking for a specific piece? Chat with our stylist now.
                   </div>
                 </div>
                 <button
@@ -77,7 +76,7 @@ export default function FloatingWhatsApp() {
             className="group relative w-14 h-14 hover:brightness-110 text-black flex items-center justify-center shadow-[0_10px_40px_-10px_rgba(255,235,59,0.6)] transition-all"
             style={{ backgroundColor: BRAND_COLORS.yellow }}
             data-testid="floating-whatsapp-cta"
-            aria-label="WhatsApp Order"
+            aria-label="Order Now"
           >
             <span
               className="absolute inset-0 animate-ping opacity-30 pointer-events-none"

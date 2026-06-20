@@ -1,7 +1,9 @@
-// Phone number for WhatsApp orders - placeholder
+import { ASSETS } from "./config/assets";
+
+// Phone number for orders — placeholder
 export const WHATSAPP_NUMBER = "15551234567";
 export const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hi Designer Vault, I'd like to enquire about your timepieces."
+  "Hi Designer Vault, I'd like to enquire about your luxury collection."
 );
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
@@ -9,49 +11,49 @@ export const BRAND = "Designer Vault";
 
 export const COLLECTION = [
   {
-    id: "rolex",
+    id: "lv-sling",
+    name: "Louis Vuitton",
+    model: "Monogram Sling",
+    price: "from $289",
+    span: "md:col-span-4",
+    img: ASSETS.ribbon.bagSling,
+    tag: "Best Seller",
+  },
+  {
+    id: "rolex-sub",
     name: "Rolex",
     model: "Submariner Date",
     price: "from $389",
     span: "md:col-span-4",
-    img: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    tag: "Iconic Diver",
+    img: ASSETS.ribbon.watchBlue,
+    tag: "Iconic",
   },
   {
-    id: "ap",
+    id: "lv-blue",
+    name: "Louis Vuitton",
+    model: "Capucines BB",
+    price: "from $349",
+    span: "md:col-span-4",
+    img: ASSETS.ribbon.bagBlue,
+    tag: "New Arrival",
+  },
+  {
+    id: "aj1",
+    name: "Nike",
+    model: "Air Jordan 1 Retro",
+    price: "from $189",
+    span: "md:col-span-6",
+    img: ASSETS.ribbon.shoeBlack,
+    tag: "Street Classic",
+  },
+  {
+    id: "ap-royal",
     name: "Audemars Piguet",
     model: "Royal Oak 41mm",
     price: "from $429",
-    span: "md:col-span-4",
-    img: "https://images.unsplash.com/photo-1611243705491-71487c2ed137?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    tag: "Octagonal Heritage",
-  },
-  {
-    id: "patek",
-    name: "Patek Philippe",
-    model: "Nautilus 5711",
-    price: "from $479",
-    span: "md:col-span-4",
-    img: "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    tag: "Holy Grail",
-  },
-  {
-    id: "omega",
-    name: "Omega",
-    model: "Speedmaster Moonwatch",
-    price: "from $329",
     span: "md:col-span-6",
-    img: "https://images.unsplash.com/photo-1662384197911-e82189f4dc60?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    tag: "Lunar Legend",
-  },
-  {
-    id: "rm",
-    name: "Richard Mille",
-    model: "RM 11-03",
-    price: "from $549",
-    span: "md:col-span-6",
-    img: "https://images.unsplash.com/photo-1495856458515-0637185db551?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    tag: "Avant-Garde",
+    img: ASSETS.ribbon.watchGold,
+    tag: "Heritage",
   },
 ];
 
@@ -60,67 +62,67 @@ export const TESTIMONIALS = [
     name: "Marcus T.",
     location: "London, UK",
     quote:
-      "I bought the Nautilus and honestly, my watch-collector mates couldn't tell the difference. The weight, the bracelet flex, the dial sunburst — it's all there.",
+      "Ordered the LV sling and a Submariner in one go. The leather grain on the bag is spot-on, and the watch weight feels exactly right. My mates thought I spent a fortune.",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&q=85&w=400",
-    purchase: "Patek Nautilus 5711",
+    purchase: "LV Sling + Submariner",
   },
   {
     name: "Daniel K.",
     location: "Dubai, UAE",
     quote:
-      "Third piece from Designer Vault. The Royal Oak's tapisserie dial is mesmerising and the movement keeps perfect time. Worth every dollar.",
+      "Third order from Designer Vault — bags, sneakers, and eyewear. QC photos before every shipment, and the quality keeps getting better. This is my go-to for the full look.",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&q=85&w=400",
-    purchase: "AP Royal Oak 15400",
+    purchase: "Royal Oak + AJ1 Low",
   },
   {
     name: "Hiroshi N.",
     location: "Tokyo, JP",
     quote:
-      "Discreet shipping, no customs trouble, and a Submariner that wears beautifully. Their WhatsApp team answered every question I had.",
+      "Discreet packaging, fast delivery, and a Capucines bag that looks and feels like the boutique piece. Their team answered every question before I paid.",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1599566150163-29194dcaad36?crop=entropy&cs=srgb&fm=jpg&q=85&w=400",
-    purchase: "Rolex Submariner 126610",
+    purchase: "LV Capucines BB",
   },
   {
     name: "Sofia R.",
     location: "Milan, IT",
     quote:
-      "Got the Daytona for my husband's anniversary. He hasn't taken it off in six months. The chronograph pushers feel incredibly tactile.",
+      "Got the gold watch and white sneakers for my husband's birthday. He wears both daily — the finishing is incredible and nobody can tell the difference.",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&q=85&w=400",
-    purchase: "Rolex Daytona",
+    purchase: "Datejust + AF1 Low",
   },
 ];
 
 export const FAQS = [
   {
-    q: "How close are these to the originals?",
-    a: "Our Super-Clone tier reproduces the original at a 1:1 level — same case dimensions, same dial layout, sapphire crystal, ceramic bezel inserts, and a Swiss-grade automatic movement. Side-by-side, only a trained watchmaker can tell.",
+    q: "How close are your products to the originals?",
+    a: "Our Super-Clone tier reproduces each piece at a 1:1 level — same materials, dimensions, hardware, and finishing as the authentic reference. Bags use matched leathers and canvases; watches feature sapphire crystal and Swiss-grade movements; shoes replicate exact panel shapes and sole details. Side-by-side, only a trained expert can tell.",
   },
   {
-    q: "What movement do you use?",
-    a: "Depending on the reference, we use ETA/Sellita base calibres or Asian Super-Clone movements that mirror the original's architecture (e.g., 3235 clone for Submariner Date). All are tested for 48 hours before dispatch.",
+    q: "Do you send quality-check photos before shipping?",
+    a: "Yes. Every order is photographed on our QC bench before dispatch — stitching, hardware, movement timing, sole alignment, or lens clarity depending on the category. You approve before we ship. No surprises.",
   },
   {
     q: "How does shipping work?",
-    a: "Discreet, fully tracked, insured worldwide shipping. We declare appropriately and pre-pay duties on request. Most parcels arrive within 7–10 working days.",
+    a: "Discreet, fully tracked, insured worldwide delivery to 38 countries. Unbranded outer packaging, customs-aware declarations, and optional duty pre-pay on request. Most orders arrive within 7–10 working days.",
   },
   {
-    q: "What if I receive a defective piece?",
-    a: "Every watch carries a 1-year mechanical warranty. If something is off, send us a short video on WhatsApp and we'll arrange a free repair or replacement.",
+    q: "What if something isn't right?",
+    a: "Every piece carries a 1-year warranty. If anything falls short, send us a short video and we'll arrange a free repair or replacement — backed by a real human team, not a chatbot.",
   },
   {
     q: "How do I order?",
-    a: "Tap any WhatsApp button on this page. Tell us the reference you want, share your address, and we'll send a payment link. That's it — no accounts, no friction.",
+    a: "Tap any Order Now button on this site. Tell us what you want — bag, watch, shoe, or eyewear — share your size or reference, and we'll send a secure payment link. No accounts, no friction.",
   },
   {
     q: "Are payments secure?",
-    a: "We accept bank transfer, USDT, and card via a secure Stripe link. No card details ever touch our systems.",
+    a: "We accept bank transfer, USDT, and card via a secure Stripe link. Your payment details never touch our systems. Every transaction is protected.",
   },
 ];

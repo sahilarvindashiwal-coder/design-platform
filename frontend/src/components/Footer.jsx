@@ -6,12 +6,12 @@ import { BRAND_COLORS } from "../constants/theme";
 
 const COLS = [
   {
-    label: "Maisons",
-    items: ["Rolex", "Patek Philippe", "Audemars Piguet", "Omega", "Richard Mille"],
+    label: "Categories",
+    items: ["Bags", "Watches", "Shoes", "Sunglasses", "New Arrivals"],
   },
   {
     label: "Help",
-    items: ["WhatsApp Order", "Shipping", "Warranty", "Authentication", "FAQ"],
+    items: ["Order Now", "Shipping", "Warranty", "QC Photos", "FAQ"],
   },
 ];
 
@@ -25,8 +25,9 @@ export default function Footer() {
           <div className="content-panel p-5 mb-8">
             <BrandLogo size="lg" className="mb-4" />
             <p className="text-white/80 text-sm leading-relaxed">
-              Faithful tributes to horology&apos;s most coveted icons — hand-finished,
-              ETA-powered, shipped discreetly to 38 countries.
+              Your one-stop vault for mirror-quality designer bags, timepieces,
+              sneakers, and eyewear — hand-inspected, QC-verified, and shipped
+              discreetly to 38 countries.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -37,7 +38,7 @@ export default function Footer() {
               data-testid="footer-whatsapp-cta"
             >
               <MessageCircle className="w-4 h-4" strokeWidth={2} />
-              Chat now
+              Order Now
             </a>
           </div>
 

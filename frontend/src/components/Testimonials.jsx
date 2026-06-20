@@ -41,7 +41,7 @@ export default function Testimonials() {
               >
                 Trusted By 14,000+
                 <br />
-                <span className="text-accent">Connoisseurs.</span>
+                <span className="text-accent">Style Insiders.</span>
               </motion.h2>
             </div>
 
@@ -111,7 +111,7 @@ export default function Testimonials() {
         <div className="mt-6 content-panel p-5">
           <div className="grid grid-cols-2 gap-y-6">
             <Stat n="4.9" label="Average Rating" />
-            <Stat n="14k+" label="Pieces Shipped" />
+            <Stat n="14k+" label="Orders Shipped" />
             <Stat n="98%" label="Repeat Buyers" />
             <Stat n="38" label="Countries Served" />
           </div>

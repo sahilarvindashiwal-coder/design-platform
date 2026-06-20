@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { COLLECTION, WHATSAPP_URL } from "../data";
 import { BRAND_COLORS } from "../constants/theme";
@@ -22,7 +23,7 @@ export default function Collection() {
             className="text-[10px] uppercase tracking-[0.3em] font-bold"
             style={{ color: BRAND_COLORS.yellow }}
           >
-            Our Collection
+            Featured Picks
           </span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -32,10 +33,19 @@ export default function Collection() {
             className="mt-3 display font-black text-white text-3xl leading-[0.95] tracking-tight uppercase"
             data-testid="collection-heading"
           >
-            Icons, Rendered
+            Icons Across
             <br />
-            <span className="text-accent">With Fidelity.</span>
+            <span className="text-accent">Every Category.</span>
           </motion.h2>
+          <Link
+            to="/products"
+            className="mt-4 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.25em] font-bold hover:text-[#FFEB3B] transition-colors"
+            style={{ color: BRAND_COLORS.yellow }}
+            data-testid="collection-view-catalog-link"
+          >
+            View Full Catalog
+            <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+          </Link>
         </motion.div>
 
         {/* Horizontal scroll product carousel */}
@@ -101,12 +111,12 @@ export default function Collection() {
               Can&apos;t find what you want?
             </div>
             <h3 className="display text-2xl leading-tight uppercase">
-              240+ References In Stock
+              240+ Styles In Stock
             </h3>
           </div>
           <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold">
             <MessageCircle className="w-4 h-4" strokeWidth={2} />
-            Enquire on WhatsApp
+            Order Now
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
           </div>
         </motion.a>

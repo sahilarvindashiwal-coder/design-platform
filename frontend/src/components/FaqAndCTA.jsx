@@ -46,7 +46,7 @@ export default function FaqAndCTA() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-4 text-white/85 text-sm leading-relaxed"
           >
-            Still unsure? Ping us on WhatsApp — a real horologist will reply
+            Still unsure? Message us anytime — a real specialist will reply
             within minutes, not days.
           </motion.p>
         </div>
@@ -93,7 +93,7 @@ export default function FaqAndCTA() {
             className="text-[10px] uppercase tracking-[0.3em] font-bold"
             style={{ color: BRAND_COLORS.yellow }}
           >
-            Begin Your Collection
+            Your Wardrobe Upgrade
           </span>
           <h2
             className="mt-4 display font-black text-white text-4xl leading-[0.92] tracking-tight uppercase"
@@ -101,11 +101,11 @@ export default function FaqAndCTA() {
           >
             Find Your
             <br />
-            <span className="shimmer-text">Forever Watch.</span>
+            <span className="shimmer-text">Forever Piece.</span>
           </h2>
           <p className="mt-5 text-white/85 text-sm leading-relaxed">
-            One message. One conversation. The watch you&apos;ve always wanted —
-            arriving discreetly at your door.
+            One message. One conversation. The bag, watch, sneaker, or shades
+            you&apos;ve been eyeing — arriving discreetly at your door.
           </p>
           <a
             href={WHATSAPP_URL}
@@ -116,7 +116,7 @@ export default function FaqAndCTA() {
             data-testid="final-whatsapp-cta"
           >
             <MessageCircle className="w-5 h-5" strokeWidth={2} />
-            Open WhatsApp Now
+            Order Now
             <ArrowUpRight
               className="w-5 h-5 group-hover:rotate-45 transition-transform"
               strokeWidth={2}

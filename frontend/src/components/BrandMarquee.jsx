@@ -2,16 +2,18 @@ import { motion } from "framer-motion";
 import { BRAND_COLORS } from "../constants/theme";
 
 const BRANDS = [
+  "Louis Vuitton",
+  "Gucci",
+  "Chanel",
+  "Hermès",
   "Rolex",
-  "Patek Philippe",
-  "Audemars Piguet",
+  "Dior",
+  "Nike",
+  "Prada",
+  "Balenciaga",
+  "Ray-Ban",
   "Omega",
-  "Richard Mille",
-  "Cartier",
-  "Hublot",
-  "IWC",
-  "Tag Heuer",
-  "Vacheron Constantin",
+  "Saint Laurent",
 ];
 
 export default function BrandMarquee() {

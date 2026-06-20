@@ -2,8 +2,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import useLenis from "./hooks/useLenis";
-import { ASSETS } from "./config/assets";
-import Navigation from "./components/Navigation";
+import SiteLayout from "./components/layout/SiteLayout";
 import Hero from "./components/Hero";
 import BrandMarquee from "./components/BrandMarquee";
 import TrustSection from "./components/TrustSection";
@@ -12,11 +11,11 @@ import Craftsmanship from "./components/Craftsmanship";
 import HowToOrder from "./components/HowToOrder";
 import Testimonials from "./components/Testimonials";
 import FaqAndCTA from "./components/FaqAndCTA";
-import Footer from "./components/Footer";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import SectionDivider from "./components/SectionDivider";
+import ProductsPage from "./pages/ProductsPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
-const Landing = () => {
+const LandingPage = () => {
   useLenis();
 
   useEffect(() => {
@@ -36,31 +35,31 @@ const Landing = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const hash = window.location.hash?.slice(1);
+    if (!hash) return;
+    const el = document.getElementById(hash);
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+  }, []);
+
   return (
-    <div
-      className="site-bg text-white min-h-screen relative"
-      style={{ backgroundImage: `url(${ASSETS.bgEntire})` }}
-      data-testid="landing-root"
-    >
-      <div className="mobile-shell">
-        <Navigation />
-        <Hero />
-        <BrandMarquee />
-        <TrustSection />
-        <SectionDivider id="divider-after-trust" />
-        <Collection />
-        <SectionDivider id="divider-after-collection" />
-        <Craftsmanship />
-        <SectionDivider id="divider-after-craft" />
-        <HowToOrder />
-        <SectionDivider id="divider-after-process" />
-        <Testimonials />
-        <SectionDivider id="divider-after-stories" />
-        <FaqAndCTA />
-        <Footer />
-        <FloatingWhatsApp />
-      </div>
-    </div>
+    <>
+      <Hero />
+      <BrandMarquee />
+      <TrustSection />
+      <SectionDivider id="divider-after-trust" />
+      <Collection />
+      <SectionDivider id="divider-after-collection" />
+      <Craftsmanship />
+      <SectionDivider id="divider-after-craft" />
+      <HowToOrder />
+      <SectionDivider id="divider-after-process" />
+      <Testimonials />
+      <SectionDivider id="divider-after-stories" />
+      <FaqAndCTA />
+    </>
   );
 };
 
@@ -69,7 +68,30 @@ function App() {
     <div className="App">
       <BrowserRouter basename={process.env.PUBLIC_URL || undefined}>
         <Routes>
-          <Route path="/" element={<Landing />} />
+          <Route
+            path="/"
+            element={
+              <SiteLayout>
+                <LandingPage />
+              </SiteLayout>
+            }
+          />
+          <Route
+            path="/products"
+            element={
+              <SiteLayout>
+                <ProductsPage />
+              </SiteLayout>
+            }
+          />
+          <Route
+            path="/products/:productId"
+            element={
+              <SiteLayout>
+                <ProductDetailPage />
+              </SiteLayout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

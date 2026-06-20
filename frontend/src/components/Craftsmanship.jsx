@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { BRAND_COLORS } from "../constants/theme";
 
 const DETAILS = [
-  { n: "01", label: "Sapphire Crystal", desc: "Anti-reflective on both sides. Scratch-resistant to 9 Mohs." },
-  { n: "02", label: "Ceramic Bezel", desc: "PVD-coated, lume-pearl filled. Indistinguishable from OEM." },
-  { n: "03", label: "Hand-Finished Case", desc: "Brushed flanks, polished chamfers — 14 finishing steps per case." },
-  { n: "04", label: "Swiss-Grade Movement", desc: "28,800 vph, 38h power reserve, 1-yr regulated tolerance ±5s/day." },
+  { n: "01", label: "Premium Materials", desc: "Matched leathers, canvases, ceramics, and sole compounds sourced to mirror the original." },
+  { n: "02", label: "Precision Construction", desc: "Stitching density, case dimensions, panel alignment — benchmarked against authentic references." },
+  { n: "03", label: "Hand-Finished Details", desc: "Hardware plating, edge paint, dial indices, and logo placement finished by hand." },
+  { n: "04", label: "Pre-Ship QC", desc: "Every piece weighed, photographed, and timed or inspected before it earns the Designer Vault mark." },
 ];
 
 export default function Craftsmanship() {
@@ -27,20 +27,20 @@ export default function Craftsmanship() {
             className="text-[10px] uppercase tracking-[0.3em] font-bold"
             style={{ color: BRAND_COLORS.yellow }}
           >
-            Inside the Case
+            Inside Every Piece
           </span>
           <h2
             className="mt-3 display font-black text-white text-3xl leading-[0.92] tracking-tight uppercase"
             data-testid="craft-heading"
           >
-            Obsession,
+            Craft You Can
             <br />
-            <span className="text-accent">Measured</span> In Microns.
+            <span className="text-accent">See & Feel.</span>
           </h2>
           <p className="mt-4 text-white/90 text-sm leading-relaxed">
-            Every component is benchmarked against an authentic reference.
-            Cases are weighed, dials are colour-matched, movements are timed —
-            all before the watch earns the Designer Vault mark.
+            From monogram alignment on a handbag to bezel click on a diver — every
+            component is compared side-by-side with the real thing. No shortcuts.
+            No compromises. Just the look you want, built to last.
           </p>
         </motion.div>
       </div>

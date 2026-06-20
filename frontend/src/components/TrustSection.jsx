@@ -3,27 +3,28 @@ import { Gem, Cog, ShieldCheck, Truck, ArrowRight } from "lucide-react";
 import BrandRibbons from "./BrandRibbons";
 import { BRAND_COLORS } from "../constants/theme";
 import { WHATSAPP_URL } from "../data";
+import { TRUST_SECTION_PRODUCT } from "../data/ribbonProducts";
 
 const PILLARS = [
   {
     icon: Gem,
-    title: "1:1 Super-Clone Quality",
-    desc: "Sapphire crystal, ceramic bezels, brushed-then-polished cases. Every detail matches the original within microns.",
+    title: "1:1 Mirror Quality",
+    desc: "Premium leathers, canvases, movements, and sole compounds — every detail matched to the authentic reference.",
   },
   {
     icon: Cog,
-    title: "Swiss-Grade Movements",
-    desc: "ETA, Sellita and Asian super-clone calibres. Tested 48 hours pre-dispatch for accuracy and reliability.",
+    title: "QC Before You Ship",
+    desc: "Hand-inspected and photographed on our bench before dispatch. You see exactly what leaves our door.",
   },
   {
     icon: ShieldCheck,
     title: "1-Year Warranty",
-    desc: "Free repair or replacement if anything mechanical falters. Backed by a real human team — not a chatbot.",
+    desc: "Free repair or replacement if anything falls short. Backed by a real human team — not a chatbot.",
   },
   {
     icon: Truck,
     title: "Discreet Worldwide Shipping",
-    desc: "Insured, tracked, customs-aware delivery to 38 countries. Most orders land within 7–10 working days.",
+    desc: "Insured, tracked, customs-aware delivery to 38 countries. Unbranded packaging. Most orders in 7–10 days.",
   },
 ];
 
@@ -34,7 +35,6 @@ export default function TrustSection() {
       data-testid="trust-section"
     >
       <div className="px-4">
-        {/* Ribbons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,12 +43,12 @@ export default function TrustSection() {
           className="relative mb-8"
         >
           <BrandRibbons
+            centerProduct={TRUST_SECTION_PRODUCT}
             height="clamp(280px, 65vw, 360px)"
             parallax
           />
         </motion.div>
 
-        {/* Copy */}
         <div className="content-panel px-5 py-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -73,9 +73,9 @@ export default function TrustSection() {
             className="display font-black text-white text-3xl leading-[0.95] tracking-tight uppercase"
             data-testid="trust-heading"
           >
-            Luxury Looks.
+            Get The Look.
             <br />
-            <span className="text-accent">Smarter Choice.</span>
+            <span className="text-accent">Keep The Standard.</span>
           </motion.h2>
 
           <motion.p
@@ -85,9 +85,10 @@ export default function TrustSection() {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="mt-5 text-white/90 text-sm leading-relaxed"
           >
-            We don&apos;t sell &ldquo;fakes.&rdquo; We engineer faithful tributes to
-            horology&apos;s most iconic references — hand-inspected, weighed, timed
-            and photographed before every piece ships.
+            We partner with top-tier factories to deliver mirror-quality replicas
+            of luxury bags, watches, sneakers, and eyewear. Real materials, real
+            QC photos, real prices — no stock images, no scripted replies. What
+            you see is what you get.
           </motion.p>
 
           <motion.a
@@ -101,12 +102,11 @@ export default function TrustSection() {
             className="mt-6 inline-flex items-center gap-2 hover:brightness-110 text-black px-6 py-3.5 text-[10px] uppercase tracking-[0.2em] font-bold transition-all"
             style={{ backgroundColor: BRAND_COLORS.yellow }}
           >
-            Our Story
+            Order Now
             <ArrowRight className="w-4 h-4" strokeWidth={2} />
           </motion.a>
         </div>
 
-        {/* Pillars grid */}
         <div className="mt-8 grid grid-cols-2 gap-px bg-white/10 border border-white/10">
           {PILLARS.map((p, i) => (
             <motion.div
