@@ -11,7 +11,6 @@ import Craftsmanship from "./components/Craftsmanship";
 import HowToOrder from "./components/HowToOrder";
 import Testimonials from "./components/Testimonials";
 import FaqAndCTA from "./components/FaqAndCTA";
-import SectionDivider from "./components/SectionDivider";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 
@@ -49,15 +48,10 @@ const LandingPage = () => {
       <Hero />
       <BrandMarquee />
       <TrustSection />
-      <SectionDivider id="divider-after-trust" />
       <Collection />
-      <SectionDivider id="divider-after-collection" />
       <Craftsmanship />
-      <SectionDivider id="divider-after-craft" />
       <HowToOrder />
-      <SectionDivider id="divider-after-process" />
       <Testimonials />
-      <SectionDivider id="divider-after-stories" />
       <FaqAndCTA />
     </>
   );

@@ -8,11 +8,11 @@ const publicUrl = process.env.PUBLIC_URL || "";
 const ribbon = (name) => `${publicUrl}/images/ribbon/${name}`;
 
 export const ASSETS = {
-  /** Full-page repeating background (outlined brand text on black) */
-  bgEntire: `${publicUrl}/images/bg-entire.svg`,
+  /** Brand logo PNG (source: Images/logo.png) */
+  logo: `${publicUrl}/images/logo.png`,
 
-  /** Hero section banner (transparent PNG — source: Images/Hero Image.png) */
-  heroBanner: `${publicUrl}/images/hero-banner.png`,
+  /** Hero section image (source: Images/hero logo.png) */
+  heroBanner: `${publicUrl}/images/hero-logo.png`,
 
   /** Transparent product PNGs for center display on section dividers */
   ribbon: {

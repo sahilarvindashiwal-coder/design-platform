@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Gem, Cog, ShieldCheck, Truck, ArrowRight } from "lucide-react";
-import BrandRibbons from "./BrandRibbons";
 import { BRAND_COLORS } from "../constants/theme";
 import { WHATSAPP_URL } from "../data";
-import { TRUST_SECTION_PRODUCT } from "../data/ribbonProducts";
 
 const PILLARS = [
   {
@@ -35,20 +33,6 @@ export default function TrustSection() {
       data-testid="trust-section"
     >
       <div className="px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
-          className="relative mb-8"
-        >
-          <BrandRibbons
-            centerProduct={TRUST_SECTION_PRODUCT}
-            height="clamp(280px, 65vw, 360px)"
-            parallax
-          />
-        </motion.div>
-
         <div className="content-panel px-5 py-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

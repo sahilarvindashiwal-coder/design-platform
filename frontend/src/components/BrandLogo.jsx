@@ -1,20 +1,19 @@
-import { BRAND_COLORS } from "../constants/theme";
+import { ASSETS } from "../config/assets";
 
-/** DESIGNER (white) + VAULT (red) logo */
+const sizes = {
+  sm: "h-8",
+  default: "h-9",
+  lg: "h-14",
+};
+
+/** Designer Vault logo — PNG from public/images/logo.png */
 export default function BrandLogo({ className = "", size = "default" }) {
-  const sizes = {
-    sm: "text-base",
-    default: "text-lg",
-    lg: "text-2xl",
-  };
-
   return (
-    <span
-      className={`display font-black italic tracking-tight uppercase leading-none ${sizes[size]} ${className}`}
+    <img
+      src={ASSETS.logo}
+      alt="Designer Vault"
+      className={`w-auto object-contain object-left ${sizes[size]} ${className}`}
       data-testid="brand-logo"
-    >
-      <span style={{ color: BRAND_COLORS.white }}>DESIGNER </span>
-      <span style={{ color: BRAND_COLORS.red }}>VAULT</span>
-    </span>
+    />
   );
 }

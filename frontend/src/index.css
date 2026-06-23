@@ -48,28 +48,70 @@ html.lenis body {
     pointer-events: none;
 }
 
-/* Full-page brand background — dimmed so content stays readable */
+/* Site shell — black base; ribbon bg handled by RibbonSiteBackground */
 .site-bg {
     background-color: #000000;
-    background-attachment: scroll;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: 800px 800px;
+    position: relative;
 }
 
 .site-bg::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.38);
+    background: rgba(0, 0, 0, 0.55);
     pointer-events: none;
+    z-index: 1;
+}
+
+/* Subtle scrolling ribbon wallpaper */
+.ribbon-site-bg {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    height: 100vh;
+    overflow: hidden;
     z-index: 0;
+}
+
+.ribbon-site-bg__track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    will-change: transform;
+}
+
+.ribbon-site-bg__track--a {
+    top: -120px;
+}
+
+.ribbon-site-bg__track--b {
+    top: 180px;
+    opacity: 0.0;
+}
+
+.ribbon-site-bg__veil {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 90% 70% at 50% 40%,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.72) 100%
+    );
+    pointer-events: none;
+}
+
+.ribbon-bg-marquee {
+    animation-duration: 45s;
 }
 
 /* Mobile-only shell — content constrained to phone width */
 .mobile-shell {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 430px;
     margin-left: auto;
     margin-right: auto;
