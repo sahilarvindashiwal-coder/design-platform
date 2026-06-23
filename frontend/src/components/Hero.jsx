@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { MessageCircle, ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import TrustBar from "./TrustBar";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { ASSETS } from "../config/assets";
 import { BRAND_COLORS } from "../constants/theme";
-import { WHATSAPP_URL } from "../data";
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 1.02 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full pt-14 px-2 bg-transparent"
+        className="relative w-full pt-header px-2 bg-transparent"
       >
         <img
           src={ASSETS.heroBanner}
@@ -63,18 +63,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 hover:brightness-110 text-black px-6 py-4 text-[10px] uppercase tracking-[0.22em] font-bold transition-all"
-              style={{ backgroundColor: BRAND_COLORS.yellow }}
-              data-testid="hero-whatsapp-cta"
-            >
-              <MessageCircle className="w-4 h-4" strokeWidth={2} />
-              <span>Order Now</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
-            </a>
+            <WhatsAppCTA testId="hero-whatsapp-cta" />
             <Link
               to="/products"
               className="inline-flex items-center justify-center gap-1.5 text-[10px] uppercase tracking-[0.25em] text-white/80 hover:text-[#FFEB3B] transition-colors py-1"

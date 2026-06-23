@@ -3,7 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import BrandLogo from "./BrandLogo";
-import { WHATSAPP_URL } from "../data";
+import SaleBanner from "./SaleBanner";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { BRAND_COLORS } from "../constants/theme";
 
 const sectionLinks = [
@@ -88,6 +89,8 @@ export default function Navigation() {
           </button>
         </motion.nav>
 
+        <SaleBanner />
+
         <AnimatePresence>
           {open && (
             <motion.div
@@ -122,17 +125,11 @@ export default function Navigation() {
                     {l.label}
                   </motion.button>
                 ))}
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-3 mb-1 text-center text-black px-6 py-3.5 text-[10px] uppercase tracking-[0.2em] font-bold"
-                  style={{ backgroundColor: BRAND_COLORS.yellow }}
-                  data-testid="mobile-whatsapp-cta"
+                <WhatsAppCTA
+                  testId="mobile-whatsapp-cta"
+                  buttonClassName="mt-3 mb-1 text-center px-6 py-3.5 text-[10px] uppercase tracking-[0.2em]"
                   onClick={() => setOpen(false)}
-                >
-                  Order Now
-                </a>
+                />
               </nav>
             </motion.div>
           )}

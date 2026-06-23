@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Gem, Cog, ShieldCheck, Truck, ArrowRight } from "lucide-react";
+import { Gem, Cog, ShieldCheck, Truck } from "lucide-react";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { BRAND_COLORS } from "../constants/theme";
-import { WHATSAPP_URL } from "../data";
 
 const PILLARS = [
   {
@@ -75,20 +75,19 @@ export default function TrustSection() {
             you see is what you get.
           </motion.p>
 
-          <motion.a
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 hover:brightness-110 text-black px-6 py-3.5 text-[10px] uppercase tracking-[0.2em] font-bold transition-all"
-            style={{ backgroundColor: BRAND_COLORS.yellow }}
+            className="mt-6"
           >
-            Order Now
-            <ArrowRight className="w-4 h-4" strokeWidth={2} />
-          </motion.a>
+            <WhatsAppCTA
+              testId="trust-whatsapp-cta"
+              fullWidth={false}
+              buttonClassName="inline-flex px-6 py-3.5 text-[10px] uppercase tracking-[0.2em]"
+            />
+          </motion.div>
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-px bg-white/10 border border-white/10">

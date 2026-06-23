@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowUpRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FAQS, WHATSAPP_URL } from "../data";
+import WhatsAppCTA from "./WhatsAppCTA";
+import { FAQS } from "../data";
 import { BRAND_COLORS } from "../constants/theme";
 
 export default function FaqAndCTA() {
@@ -107,21 +107,12 @@ export default function FaqAndCTA() {
             One message. One conversation. The bag, watch, sneaker, or shades
             you&apos;ve been eyeing — arriving discreetly at your door.
           </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="group mt-6 inline-flex items-center justify-center gap-3 hover:brightness-110 text-black px-8 py-4 text-[10px] uppercase tracking-[0.25em] font-bold transition-all w-full"
-            style={{ backgroundColor: BRAND_COLORS.yellow }}
-            data-testid="final-whatsapp-cta"
-          >
-            <MessageCircle className="w-5 h-5" strokeWidth={2} />
-            Order Now
-            <ArrowUpRight
-              className="w-5 h-5 group-hover:rotate-45 transition-transform"
-              strokeWidth={2}
-            />
-          </a>
+          <WhatsAppCTA
+            testId="final-whatsapp-cta"
+            variant="large"
+            className="mt-6"
+            buttonClassName="px-8 py-4 text-[10px] uppercase tracking-[0.25em]"
+          />
           <p className="mt-4 text-white/50 text-[9px] uppercase tracking-[0.2em]">
             Reply guaranteed within 5 minutes · 24/7
           </p>

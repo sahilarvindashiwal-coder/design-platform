@@ -108,7 +108,15 @@ html.lenis body {
     animation-duration: 45s;
 }
 
-/* Mobile-only shell — content constrained to phone width */
+/* Offset for fixed nav (h-14) + sale banner (~2.25rem) */
+.pt-header {
+    padding-top: 5.75rem;
+}
+
+.sticky-below-header {
+    top: 5.75rem;
+}
+
 .mobile-shell {
     position: relative;
     z-index: 2;

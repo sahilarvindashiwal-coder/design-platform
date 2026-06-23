@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, ShoppingBag, PackageCheck } from "lucide-react";
-import { WHATSAPP_URL } from "../data";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { BRAND_COLORS } from "../constants/theme";
 
 const STEPS = [
@@ -93,19 +93,13 @@ export default function HowToOrder() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-8 flex justify-center"
+          className="mt-8"
         >
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-3 hover:brightness-110 text-black px-8 py-4 text-[10px] uppercase tracking-[0.25em] font-bold transition-all w-full justify-center"
-            style={{ backgroundColor: BRAND_COLORS.yellow }}
-            data-testid="process-whatsapp-cta"
-          >
-            <MessageCircle className="w-4 h-4" strokeWidth={2} />
-            Order Now
-          </a>
+          <WhatsAppCTA
+            testId="process-whatsapp-cta"
+            variant="large"
+            buttonClassName="px-8 py-4 text-[10px] uppercase tracking-[0.25em]"
+          />
         </motion.div>
       </div>
     </section>

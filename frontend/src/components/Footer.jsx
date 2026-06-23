@@ -1,7 +1,10 @@
-import { Instagram, Twitter, Facebook, MessageCircle, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import BrandLogo from "./BrandLogo";
 import TrustBar from "./TrustBar";
+import WhatsAppCTA from "./WhatsAppCTA";
 import { BRAND, WHATSAPP_URL } from "../data";
+import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "../data/policies";
 import { BRAND_COLORS } from "../constants/theme";
 
 const COLS = [
@@ -11,7 +14,7 @@ const COLS = [
   },
   {
     label: "Help",
-    items: ["Order Now", "Shipping", "Warranty", "QC Photos", "FAQ"],
+    items: ["Order on WhatsApp", "Shipping", "Warranty", "QC Photos", "FAQ"],
   },
 ];
 
@@ -29,17 +32,10 @@ export default function Footer() {
               sneakers, and eyewear — hand-inspected, QC-verified, and shipped
               discreetly to 38 countries.
             </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 hover:brightness-110 text-black px-6 py-3 text-[10px] uppercase tracking-[0.2em] font-bold transition-all w-full justify-center"
-              style={{ backgroundColor: BRAND_COLORS.yellow }}
-              data-testid="footer-whatsapp-cta"
-            >
-              <MessageCircle className="w-4 h-4" strokeWidth={2} />
-              Order Now
-            </a>
+            <WhatsAppCTA
+              testId="footer-whatsapp-cta"
+              buttonClassName="mt-5 px-6 py-3 text-[10px] uppercase tracking-[0.2em]"
+            />
           </div>
 
           <div className="grid grid-cols-2 gap-6 mb-8">
@@ -54,12 +50,25 @@ export default function Footer() {
                 <ul className="space-y-2.5">
                   {c.items.map((item) => (
                     <li key={item}>
-                      <a
-                        href="#"
-                        className="text-white/70 hover:text-white text-xs transition-colors"
-                      >
-                        {item}
-                      </a>
+                      {item === "Order on WhatsApp" ? (
+                        <a
+                          href={WHATSAPP_URL}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-white/70 hover:text-white text-xs transition-colors"
+                        >
+                          {item}
+                        </a>
+                      ) : item === "FAQ" ? (
+                        <Link
+                          to="/#faq"
+                          className="text-white/70 hover:text-white text-xs transition-colors"
+                        >
+                          {item}
+                        </Link>
+                      ) : (
+                        <span className="text-white/70 text-xs">{item}</span>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -67,21 +76,28 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 mb-8">
-            {[Instagram, Twitter, Facebook, Mail].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="w-9 h-9 border border-white/15 hover:border-[#FFEB3B] hover:bg-[#FFEB3B] flex items-center justify-center group transition-all"
-                data-testid={`footer-social-${i}`}
-              >
-                <Icon
-                  className="w-4 h-4 text-white/70 group-hover:text-black"
-                  strokeWidth={1.5}
-                />
-              </a>
-            ))}
-          </div>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 px-4 py-3 mb-8 border border-white/15 hover:border-[#FFEB3B] hover:bg-[#FFEB3B]/10 transition-all group w-full"
+            data-testid="footer-social-instagram"
+          >
+            <span className="w-10 h-10 flex-shrink-0 flex items-center justify-center border border-white/15 group-hover:border-[#FFEB3B] group-hover:bg-[#FFEB3B] transition-all">
+              <Instagram
+                className="w-5 h-5 text-white/70 group-hover:text-black transition-colors"
+                strokeWidth={1.5}
+              />
+            </span>
+            <span>
+              <span className="block text-[9px] uppercase tracking-[0.25em] text-white/50">
+                Follow us
+              </span>
+              <span className="block text-sm font-semibold text-white group-hover:text-[#FFEB3B] transition-colors">
+                {INSTAGRAM_HANDLE}
+              </span>
+            </span>
+          </a>
 
           <div className="border-t border-white/10 pt-8 pb-6">
             <div className="display font-black text-white/[0.06] text-[22vw] leading-none tracking-tighter text-center select-none uppercase">
@@ -92,9 +108,15 @@ export default function Footer() {
           <div className="flex flex-col gap-3 text-[9px] text-white/50">
             <div>© {new Date().getFullYear()} {BRAND}. All rights reserved.</div>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-white/80 transition-colors">Privacy</a>
-              <a href="#" className="hover:text-white/80 transition-colors">Terms</a>
-              <a href="#" className="hover:text-white/80 transition-colors">Shipping</a>
+              <Link to="/privacy" className="hover:text-white/80 transition-colors">
+                Privacy
+              </Link>
+              <Link to="/terms" className="hover:text-white/80 transition-colors">
+                Terms
+              </Link>
+              <Link to="/returns" className="hover:text-white/80 transition-colors">
+                Returns
+              </Link>
             </div>
           </div>
         </div>

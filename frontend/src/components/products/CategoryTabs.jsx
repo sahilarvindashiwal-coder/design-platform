@@ -7,7 +7,7 @@ export default function CategoryTabs({ categories, activeCategory, onChange }) {
 
   return (
     <div
-      className="sticky top-14 z-40 bg-black/95 backdrop-blur-md border-b border-white/10 -mx-4 px-4 py-3"
+      className="sticky sticky-below-header z-40 bg-black/95 backdrop-blur-md border-b border-white/10 -mx-4 px-4 py-3"
       data-testid="category-tabs"
     >
       <div className="flex gap-2 overflow-x-auto scrollbar-hide">

@@ -119,7 +119,7 @@ export const FAQS = [
   },
   {
     q: "How do I order?",
-    a: "Tap any Order Now button on this site. Tell us what you want — bag, watch, shoe, or eyewear — share your size or reference, and we'll send a secure payment link. No accounts, no friction.",
+    a: "Tap any Order on WhatsApp button on this site. Tell us what you want — bag, watch, shoe, or eyewear — share your size or reference, and we'll send a secure payment link. No accounts, no friction.",
   },
   {
     q: "Are payments secure?",

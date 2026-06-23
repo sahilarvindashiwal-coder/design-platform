@@ -94,10 +94,7 @@ export default function Collection() {
         </div>
 
         {/* CTA tile */}
-        <motion.a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noreferrer"
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -114,12 +111,18 @@ export default function Collection() {
               240+ Styles In Stock
             </h3>
           </div>
-          <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold"
+            data-testid="collection-whatsapp-cta"
+          >
             <MessageCircle className="w-4 h-4" strokeWidth={2} />
-            Order Now
+            Order on WhatsApp
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
-          </div>
-        </motion.a>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

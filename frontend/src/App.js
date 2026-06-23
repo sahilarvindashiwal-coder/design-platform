@@ -13,6 +13,9 @@ import Testimonials from "./components/Testimonials";
 import FaqAndCTA from "./components/FaqAndCTA";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsPage from "./pages/TermsPage";
+import ReturnsPolicyPage from "./pages/ReturnsPolicyPage";
 
 const LandingPage = () => {
   useLenis();
@@ -83,6 +86,30 @@ function App() {
             element={
               <SiteLayout>
                 <ProductDetailPage />
+              </SiteLayout>
+            }
+          />
+          <Route
+            path="/privacy"
+            element={
+              <SiteLayout>
+                <PrivacyPolicyPage />
+              </SiteLayout>
+            }
+          />
+          <Route
+            path="/terms"
+            element={
+              <SiteLayout>
+                <TermsPage />
+              </SiteLayout>
+            }
+          />
+          <Route
+            path="/returns"
+            element={
+              <SiteLayout>
+                <ReturnsPolicyPage />
               </SiteLayout>
             }
           />

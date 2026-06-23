@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { BRAND_COLORS } from "../constants/theme";
+import WhatsAppCTA from "../components/WhatsAppCTA";
 import {
   getProductById,
   getCategoryLabel,
@@ -15,7 +16,7 @@ export default function ProductDetailPage() {
 
   if (!product) {
     return (
-      <main className="pt-14 pb-12 px-4 min-h-[60vh] flex flex-col items-center justify-center text-center">
+      <main className="pt-header pb-12 px-4 min-h-[60vh] flex flex-col items-center justify-center text-center">
         <h1 className="display text-3xl uppercase text-white">Product Not Found</h1>
         <p className="mt-3 text-white/70 text-sm">
           This item may have been removed or the link is incorrect.
@@ -35,7 +36,7 @@ export default function ProductDetailPage() {
   const categoryLabel = getCategoryLabel(product.category);
 
   return (
-    <main className="pt-14 pb-12 bg-transparent" data-testid="product-detail-page">
+    <main className="pt-header pb-12 bg-transparent" data-testid="product-detail-page">
       <div className="px-4">
         <Link
           to="/products"
@@ -97,18 +98,11 @@ export default function ProductDetailPage() {
 
           <ProductSpecs specs={product.specs} />
 
-          <a
+          <WhatsAppCTA
+            testId="product-detail-whatsapp-cta"
             href={productWhatsAppUrl(product)}
-            target="_blank"
-            rel="noreferrer"
-            className="group mt-6 flex items-center justify-center gap-2.5 w-full hover:brightness-110 text-black px-6 py-4 text-[10px] uppercase tracking-[0.22em] font-bold transition-all"
-            style={{ backgroundColor: BRAND_COLORS.yellow }}
-            data-testid="product-detail-whatsapp-cta"
-          >
-            <MessageCircle className="w-4 h-4" strokeWidth={2} />
-            Order Now
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
-          </a>
+            className="mt-6"
+          />
         </motion.div>
       </div>
     </main>

@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
 import { WHATSAPP_URL, BRAND } from "../data";
 import { BRAND_COLORS } from "../constants/theme";
-
 export default function FloatingWhatsApp() {
   const [show, setShow] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -45,7 +44,7 @@ export default function FloatingWhatsApp() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 30 }}
                 transition={{ duration: 0.4 }}
-                className="hidden md:flex relative items-center bg-white text-black pl-5 pr-3 py-3 max-w-xs shadow-2xl"
+                className="hidden md:flex relative items-center bg-white text-black pl-5 pr-3 py-3 max-w-xs shadow-2xl mb-8"
                 data-testid="floating-whatsapp-tooltip"
               >
                 <div className="pr-3">
@@ -76,7 +75,7 @@ export default function FloatingWhatsApp() {
             className="group relative w-14 h-14 hover:brightness-110 text-black flex items-center justify-center shadow-[0_10px_40px_-10px_rgba(255,235,59,0.6)] transition-all"
             style={{ backgroundColor: BRAND_COLORS.yellow }}
             data-testid="floating-whatsapp-cta"
-            aria-label="Order Now"
+            aria-label="Order on WhatsApp"
           >
             <span
               className="absolute inset-0 animate-ping opacity-30 pointer-events-none"
@@ -84,8 +83,7 @@ export default function FloatingWhatsApp() {
             />
             <MessageCircle className="relative w-6 h-6 sm:w-7 sm:h-7" strokeWidth={1.5} />
           </a>
-        </motion.div>
-      )}
+        </motion.div>      )}
     </AnimatePresence>
   );
 }
