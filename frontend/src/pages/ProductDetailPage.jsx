@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { BRAND_COLORS } from "../constants/theme";
 import WhatsAppCTA from "../components/WhatsAppCTA";
+import ProductImageGallery from "../components/products/ProductImageGallery";
 import {
   getProductById,
-  getCategoryLabel,
+  getProductImages,
   productWhatsAppUrl,
 } from "../data/productsCatalog";
-import ProductSpecs from "../components/products/ProductSpecs";
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
@@ -33,8 +33,6 @@ export default function ProductDetailPage() {
     );
   }
 
-  const categoryLabel = getCategoryLabel(product.category);
-
   return (
     <main className="pt-header pb-12 bg-transparent" data-testid="product-detail-page">
       <div className="px-4">
@@ -52,34 +50,20 @@ export default function ProductDetailPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="relative bg-black/80 border border-white/15 aspect-square flex items-center justify-center p-6 mb-6">
-            {product.tag && (
-              <span
-                className="absolute top-3 left-3 text-[8px] uppercase tracking-[0.15em] font-bold px-2.5 py-1 text-black"
-                style={{ backgroundColor: BRAND_COLORS.yellow }}
-              >
-                {product.tag}
-              </span>
-            )}
-            <img
-              src={product.image}
+          <div className="relative bg-black/80 border border-white/15 aspect-square mb-6">
+            <ProductImageGallery
+              images={getProductImages(product)}
               alt={`${product.brand} ${product.name}`}
-              className="w-full h-full object-contain max-h-[320px]"
-              data-testid="product-detail-image"
+              variant="detail"
+              className="h-full p-6"
+              imageClassName="w-full h-full object-contain max-h-[320px]"
+              testId="product-detail-image"
             />
           </div>
 
           <div className="content-panel px-5 py-5 mb-4">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-[9px] uppercase tracking-[0.2em] font-bold px-2 py-1 border border-white/20 text-white/70">
-                {categoryLabel}
-              </span>
-            </div>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-white/50 font-semibold">
-              {product.brand}
-            </p>
             <h1
-              className="display text-3xl uppercase tracking-tight text-white leading-tight mt-1"
+              className="display text-3xl uppercase tracking-tight text-white leading-tight"
               data-testid="product-detail-name"
             >
               {product.name}
@@ -91,12 +75,7 @@ export default function ProductDetailPage() {
             >
               {product.priceLabel}
             </p>
-            <p className="mt-4 text-white/80 text-sm leading-relaxed">
-              {product.description}
-            </p>
           </div>
-
-          <ProductSpecs specs={product.specs} />
 
           <WhatsAppCTA
             testId="product-detail-whatsapp-cta"

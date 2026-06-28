@@ -1,562 +1,594 @@
 /**
  * Designer Vault — Products Catalog
- * ─────────────────────────────────
- * This is the ONLY file you need to edit to add or update catalog products.
- *
- * TO ADD A NEW PRODUCT:
- * 1. Copy any existing product object in PRODUCTS below
- * 2. Give it a unique `id` (used in URL: /products/your-id)
- * 3. Set `category` to: "bags" | "watches" | "shoes" | "sunglasses"
- * 4. Update name, brand, price, priceLabel, image, description, specs
- * 5. Add image to public/images/ribbon/ and reference via ASSETS.ribbon.*
- *
- * TO CHANGE AN EXISTING PRODUCT:
- * Find its object by `id` and edit any field — changes appear on catalog + detail page.
+ * Generated from product images in public/images/
  */
-import { ASSETS } from "../config/assets";
 import { WHATSAPP_NUMBER } from "../data";
 
 export const CATEGORIES = [
   { id: "bags", label: "Bags" },
   { id: "watches", label: "Watches" },
   { id: "shoes", label: "Shoes" },
+  { id: "jewelry", label: "Jewelry" },
   { id: "sunglasses", label: "Sunglasses" },
 ];
 
-const { ribbon } = ASSETS;
-
 export const PRODUCTS = [
-  // ── Bags (8) ──────────────────────────────────────────────────────────────
   {
-    id: "bag-01",
+    id: "louis-vuitton-57th-street-nyc-avenue-slingbag-mens-orange",
     category: "bags",
-    name: "Monogram Sling",
+    name: "57TH STREET NYC AVENUE SLINGBAG MENS - ORANGE",
     brand: "Louis Vuitton",
-    price: 289,
-    priceLabel: "from $289",
-    image: ribbon.bagSling,
-    tag: "Best Seller",
-    description:
-      "Compact crossbody sling in coated canvas with adjustable strap and gold-tone hardware. Super-clone finish with precise monogram alignment.",
-    specs: [
-      { label: "Material", value: "Coated canvas & leather trim" },
-      { label: "Dimensions", value: "25 × 15 × 8 cm" },
-      { label: "Strap", value: "Adjustable, 90–130 cm" },
-      { label: "Hardware", value: "Gold-tone" },
-    ],
-  },
-  {
-    id: "bag-02",
-    category: "bags",
-    name: "Capucines BB",
-    brand: "Louis Vuitton",
-    price: 349,
-    priceLabel: "from $349",
-    image: ribbon.bagBlue,
-    tag: "New Arrival",
-    description:
-      "Structured top-handle bag in deep blue Taurillon leather. Iconic LV flap closure with refined interior compartments.",
-    specs: [
-      { label: "Material", value: "Taurillon leather" },
-      { label: "Dimensions", value: "27 × 18 × 9 cm" },
-      { label: "Handle Drop", value: "11 cm" },
-      { label: "Interior", value: "2 compartments, zip pocket" },
-    ],
-  },
-  {
-    id: "bag-03",
-    category: "bags",
-    name: "Twist PM",
-    brand: "Louis Vuitton",
-    price: 319,
-    priceLabel: "from $319",
-    image: ribbon.bagGold,
-    description:
-      "Evening clutch in metallic gold Épi leather with signature twist-lock closure and chain strap.",
-    specs: [
-      { label: "Material", value: "Épi leather" },
-      { label: "Dimensions", value: "18 × 12 × 7 cm" },
-      { label: "Chain", value: "Removable, 110 cm" },
-      { label: "Closure", value: "Twist-lock LV" },
-    ],
-  },
-  {
-    id: "bag-04",
-    category: "bags",
-    name: "Neverfull MM",
-    brand: "Louis Vuitton",
-    price: 279,
-    priceLabel: "from $279",
-    image: ribbon.bagSling,
-    description:
-      "Classic open tote with side laces, spacious interior, and removable pochette. Daily carry with timeless monogram appeal.",
-    specs: [
-      { label: "Material", value: "Coated canvas" },
-      { label: "Dimensions", value: "32 × 29 × 17 cm" },
-      { label: "Handles", value: "Double, 21 cm drop" },
-      { label: "Includes", value: "Removable pochette" },
-    ],
-  },
-  {
-    id: "bag-05",
-    category: "bags",
-    name: "Alma BB",
-    brand: "Louis Vuitton",
-    price: 299,
-    priceLabel: "from $299",
-    image: ribbon.bagBlue,
-    description:
-      "Domed silhouette in blue Vernis leather with padlock detail. Structured shape that holds its form beautifully.",
-    specs: [
-      { label: "Material", value: "Vernis leather" },
-      { label: "Dimensions", value: "24 × 18 × 12 cm" },
-      { label: "Strap", value: "Detachable, adjustable" },
-      { label: "Base", value: "Protective feet" },
-    ],
-  },
-  {
-    id: "bag-06",
-    category: "bags",
-    name: "Speedy Bandoulière 25",
-    brand: "Louis Vuitton",
-    price: 269,
-    priceLabel: "from $269",
-    image: ribbon.bagGold,
-    tag: "Popular",
-    description:
-      "Petite barrel bag in gold-tone leather with crossbody strap. Lightweight and versatile for day-to-night wear.",
-    specs: [
-      { label: "Material", value: "Smooth leather" },
-      { label: "Dimensions", value: "25 × 19 × 15 cm" },
-      { label: "Strap", value: "Adjustable bandoulière" },
-      { label: "Lining", value: "Microfiber, burgundy" },
-    ],
-  },
-  {
-    id: "bag-07",
-    category: "bags",
-    name: "Pochette Métis",
-    brand: "Louis Vuitton",
-    price: 329,
-    priceLabel: "from $329",
-    image: ribbon.bagSling,
-    description:
-      "Compact satchel with iconic monogram canvas, front flap pocket, and adjustable shoulder strap.",
-    specs: [
-      { label: "Material", value: "Monogram canvas" },
-      { label: "Dimensions", value: "25 × 18 × 7 cm" },
-      { label: "Strap", value: "Adjustable, 50 cm drop" },
-      { label: "Pockets", value: "Front flap + interior zip" },
-    ],
-  },
-  {
-    id: "bag-08",
-    category: "bags",
-    name: "OnTheGo PM",
-    brand: "Louis Vuitton",
-    price: 359,
-    priceLabel: "from $359",
-    image: ribbon.bagBlue,
-    description:
-      "Roomy tote with dual handle options — top handles and long shoulder straps. Ideal for work or travel.",
-    specs: [
-      { label: "Material", value: "Monogram Giant canvas" },
-      { label: "Dimensions", value: "34 × 27 × 14 cm" },
-      { label: "Handles", value: "Double top + shoulder" },
-      { label: "Interior", value: "Flat pocket, key holder" },
-    ],
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON 57TH STREET NYC AVENUE SLINGBAG MENS - ORANGE.png.webp",
   },
 
-  // ── Watches (8) ───────────────────────────────────────────────────────────
   {
-    id: "watch-01",
-    category: "watches",
-    name: "Submariner Date",
-    brand: "Rolex",
-    price: 389,
-    priceLabel: "from $389",
-    image: ribbon.watchBlue,
-    tag: "Iconic Diver",
-    description:
-      "Super-clone diver with ceramic bezel, sapphire crystal, and 3235 clone movement. 41mm case with precise dial alignment.",
-    specs: [
-      { label: "Case Size", value: "41 mm" },
-      { label: "Movement", value: "3235 Super-Clone automatic" },
-      { label: "Crystal", value: "Sapphire" },
-      { label: "Water Resistance", value: "300 m rated" },
-    ],
-  },
-  {
-    id: "watch-02",
-    category: "watches",
-    name: "Royal Oak 41mm",
-    brand: "Audemars Piguet",
-    price: 429,
-    priceLabel: "from $429",
-    image: ribbon.watchGold,
-    tag: "Heritage",
-    description:
-      "Octagonal bezel with tapisserie dial in gold tone. Integrated bracelet with seamless taper and super-clone calibre.",
-    specs: [
-      { label: "Case Size", value: "41 mm" },
-      { label: "Movement", value: "3120 clone automatic" },
-      { label: "Dial", value: "Grande Tapisserie" },
-      { label: "Bracelet", value: "Integrated stainless steel" },
-    ],
-  },
-  {
-    id: "watch-03",
-    category: "watches",
-    name: "Nautilus 5711",
-    brand: "Patek Philippe",
-    price: 479,
-    priceLabel: "from $479",
-    image: ribbon.watchSilver,
-    tag: "Holy Grail",
-    description:
-      "Horizontal embossed dial with porthole case design. Ultra-thin profile with exhibition caseback and refined finishing.",
-    specs: [
-      { label: "Case Size", value: "40 mm" },
-      { label: "Movement", value: "324 clone automatic" },
-      { label: "Thickness", value: "8.3 mm" },
-      { label: "Bracelet", value: "Integrated, fold clasp" },
-    ],
-  },
-  {
-    id: "watch-04",
-    category: "watches",
-    name: "Speedmaster Moonwatch",
-    brand: "Omega",
-    price: 329,
-    priceLabel: "from $329",
-    image: ribbon.watchBlue,
-    description:
-      "Chronograph with black dial, tachymeter bezel, and manual-wind clone movement. Lunar legend on your wrist.",
-    specs: [
-      { label: "Case Size", value: "42 mm" },
-      { label: "Movement", value: "1861 clone manual-wind" },
-      { label: "Functions", value: "Chronograph, tachymeter" },
-      { label: "Crystal", value: "Hesalite-style domed" },
-    ],
-  },
-  {
-    id: "watch-05",
-    category: "watches",
-    name: "RM 11-03",
-    brand: "Richard Mille",
-    price: 549,
-    priceLabel: "from $549",
-    image: ribbon.watchGold,
-    tag: "Avant-Garde",
-    description:
-      "Tonneau case with skeleton dial and flyback chronograph. Lightweight construction with bold architectural design.",
-    specs: [
-      { label: "Case Size", value: "44 × 49 mm" },
-      { label: "Movement", value: "RMAC3 clone automatic" },
-      { label: "Material", value: "Titanium case" },
-      { label: "Functions", value: "Flyback chronograph, GMT" },
-    ],
-  },
-  {
-    id: "watch-06",
-    category: "watches",
-    name: "Daytona",
-    brand: "Rolex",
-    price: 419,
-    priceLabel: "from $419",
-    image: ribbon.watchSilver,
-    description:
-      "Tri-compax chronograph with tachymeter scale and super-clone column-wheel movement. Racing pedigree, everyday wear.",
-    specs: [
-      { label: "Case Size", value: "40 mm" },
-      { label: "Movement", value: "4130 clone automatic" },
-      { label: "Bezel", value: "Ceramic tachymeter" },
-      { label: "Power Reserve", value: "72 hours" },
-    ],
-  },
-  {
-    id: "watch-07",
-    category: "watches",
-    name: "Seamaster 300M",
-    brand: "Omega",
-    price: 349,
-    priceLabel: "from $349",
-    image: ribbon.watchBlue,
-    description:
-      "Wave-pattern dial with helium escape valve and ceramic bezel insert. Bond-approved diver with super-clone precision.",
-    specs: [
-      { label: "Case Size", value: "42 mm" },
-      { label: "Movement", value: "8800 clone Co-Axial" },
-      { label: "Bezel", value: "Ceramic, unidirectional" },
-      { label: "Water Resistance", value: "300 m rated" },
-    ],
-  },
-  {
-    id: "watch-08",
-    category: "watches",
-    name: "Datejust 41",
-    brand: "Rolex",
-    price: 369,
-    priceLabel: "from $369",
-    image: ribbon.watchGold,
-    description:
-      "Fluted bezel with jubilee bracelet and date window at 3 o'clock. The quintessential dress watch, super-clone finished.",
-    specs: [
-      { label: "Case Size", value: "41 mm" },
-      { label: "Movement", value: "3235 clone automatic" },
-      { label: "Bracelet", value: "Jubilee, Oysterlock clasp" },
-      { label: "Bezel", value: "Fluted white gold tone" },
-    ],
+    id: "louis-vuitton-avenue-mini-slingbag-pm-mens-black",
+    category: "bags",
+    name: "AVENUE MINI SLINGBAG PM MENS - BLACK",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON AVENUE MINI SLINGBAG PM MENS - BLACK.png.webp",
   },
 
-  // ── Shoes (7) ─────────────────────────────────────────────────────────────
   {
-    id: "shoe-01",
-    category: "shoes",
-    name: "Air Jordan 1 Retro",
-    brand: "Nike",
-    price: 189,
-    priceLabel: "from $189",
-    image: ribbon.shoeBlack,
-    tag: "Classic",
-    description:
-      "High-top silhouette in black and white leather with iconic wings logo. Premium super-clone materials and accurate stitching.",
-    specs: [
-      { label: "Upper", value: "Full-grain leather" },
-      { label: "Sole", value: "Rubber cupsole" },
-      { label: "Sizes", value: "EU 39–46 available" },
-      { label: "Colorway", value: "Black / White" },
-    ],
-  },
-  {
-    id: "shoe-02",
-    category: "shoes",
-    name: "Air Force 1 Low",
-    brand: "Nike",
-    price: 169,
-    priceLabel: "from $169",
-    image: ribbon.shoeWhite,
-    description:
-      "All-white low-top staple with perforated toe box and padded collar. Clean, versatile, and built to last.",
-    specs: [
-      { label: "Upper", value: "Leather & synthetic" },
-      { label: "Sole", value: "Air-sole unit" },
-      { label: "Sizes", value: "EU 39–46 available" },
-      { label: "Colorway", value: "Triple White" },
-    ],
-  },
-  {
-    id: "shoe-03",
-    category: "shoes",
-    name: "Yeezy Boost 350",
-    brand: "Adidas",
-    price: 199,
-    priceLabel: "from $199",
-    image: ribbon.shoeBlack,
-    tag: "Trending",
-    description:
-      "Primeknit upper with Boost midsole cushioning. Sock-like fit with distinctive side stripe pattern.",
-    specs: [
-      { label: "Upper", value: "Primeknit" },
-      { label: "Midsole", value: "Boost foam" },
-      { label: "Sizes", value: "EU 39–46 available" },
-      { label: "Colorway", value: "Core Black" },
-    ],
-  },
-  {
-    id: "shoe-04",
-    category: "shoes",
-    name: "Dunk Low",
-    brand: "Nike",
-    price: 179,
-    priceLabel: "from $179",
-    image: ribbon.shoeWhite,
-    description:
-      "Skate-inspired low-top with color-blocked panels and padded tongue. Retro court style for everyday rotation.",
-    specs: [
-      { label: "Upper", value: "Leather overlays" },
-      { label: "Sole", value: "Rubber pivot circle" },
-      { label: "Sizes", value: "EU 39–46 available" },
-      { label: "Colorway", value: "White / Grey" },
-    ],
-  },
-  {
-    id: "shoe-05",
-    category: "shoes",
-    name: "New Balance 550",
-    brand: "New Balance",
-    price: 159,
-    priceLabel: "from $159",
-    image: ribbon.shoeBlack,
-    description:
-      "Retro basketball low with perforated vamp and N logo. Vintage aesthetic with modern comfort.",
-    specs: [
-      { label: "Upper", value: "Leather & mesh" },
-      { label: "Sole", value: "Rubber outsole" },
-      { label: "Sizes", value: "EU 39–46 available" },
-      { label: "Colorway", value: "Black / Grey" },
-    ],
-  },
-  {
-    id: "shoe-06",
-    category: "shoes",
-    name: "Samba OG",
-    brand: "Adidas",
-    price: 149,
-    priceLabel: "from $149",
-    image: ribbon.shoeWhite,
-    description:
-      "T-bar football trainer with gum sole and suede toe overlay. Timeless terrace classic in premium super-clone build.",
-    specs: [
-      { label: "Upper", value: "Leather & suede" },
-      { label: "Sole", value: "Gum rubber" },
-      { label: "Sizes", value: "EU 39–46 available" },
-      { label: "Colorway", value: "White / Green" },
-    ],
-  },
-  {
-    id: "shoe-07",
-    category: "shoes",
-    name: "Travis Scott x AJ1 Low",
-    brand: "Nike",
-    price: 229,
-    priceLabel: "from $229",
-    image: ribbon.shoeBlack,
-    tag: "Limited",
-    description:
-      "Reverse swoosh low-top with olive and black palette. Collab details including embossed heel tab and co-branded insole.",
-    specs: [
-      { label: "Upper", value: "Premium leather" },
-      { label: "Sole", value: "Rubber cupsole" },
-      { label: "Sizes", value: "EU 39–46 available" },
-      { label: "Colorway", value: "Olive / Black" },
-    ],
+    id: "louis-vuitton-avenue-slingbag-damier-mens-black",
+    category: "bags",
+    name: "AVENUE SLINGBAG DAMIER MENS - BLACK",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON AVENUE SLINGBAG DAMIER MENS - BLACK.png.webp",
   },
 
-  // ── Sunglasses (7) ────────────────────────────────────────────────────────
   {
-    id: "sun-01",
-    category: "sunglasses",
-    name: "Aviator Classic",
-    brand: "Ray-Ban",
-    price: 129,
-    priceLabel: "from $129",
-    image: ribbon.glasses,
-    tag: "Best Seller",
-    description:
-      "Teardrop aviator with gold frame and green G-15 lenses. UV400 protection with super-clone hinge and temple detailing.",
-    specs: [
-      { label: "Frame", value: "Metal, gold tone" },
-      { label: "Lens", value: "G-15 green, UV400" },
-      { label: "Size", value: "58 mm lens width" },
-      { label: "Includes", value: "Case & cloth" },
-    ],
+    id: "louis-vuitton-avenue-slingbag-damier-mens-graphite-blue",
+    category: "bags",
+    name: "AVENUE SLINGBAG DAMIER MENS - GRAPHITE BLUE",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON AVENUE SLINGBAG DAMIER MENS - GRAPHITE BLUE.png.webp",
+    images: ["/images/Bags/LOUIS VUITTON AVENUE SLINGBAG DAMIER MENS - GRAPHITE BLUE.png.webp","/images/Bags/LOUIS VUITTON AVENUE SLINGBAG DAMIER MENS - GRAPHITE BLUE2.png.webp"],
   },
+
   {
-    id: "sun-02",
-    category: "sunglasses",
-    name: "Wayfarer",
-    brand: "Ray-Ban",
-    price: 119,
-    priceLabel: "from $119",
-    image: ribbon.glasses,
-    description:
-      "Iconic trapezoid acetate frame with dark lenses. Timeless shape that suits every face.",
-    specs: [
-      { label: "Frame", value: "Acetate, black" },
-      { label: "Lens", value: "Dark grey, UV400" },
-      { label: "Size", value: "50 mm lens width" },
-      { label: "Includes", value: "Case & cloth" },
-    ],
+    id: "louis-vuitton-borsa-damier-graphite-sling-shoulder-bag-graphite-yellow",
+    category: "bags",
+    name: "BORSA DAMIER GRAPHITE SLING SHOULDER BAG - GRAPHITE YELLOW",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON BORSA DAMIER GRAPHITE SLING SHOULDER BAG - GRAPHITE YELLOW.png.webp",
   },
+
   {
-    id: "sun-03",
-    category: "sunglasses",
-    name: "Holbrook",
-    brand: "Oakley",
-    price: 139,
-    priceLabel: "from $139",
-    image: ribbon.glasses,
-    description:
-      "Square profile with O Matter frame and Plutonite lenses. Durable, lightweight, and built for active wear.",
-    specs: [
-      { label: "Frame", value: "O Matter, matte black" },
-      { label: "Lens", value: "Plutonite, UV400" },
-      { label: "Size", value: "55 mm lens width" },
-      { label: "Includes", value: "Microbag" },
-    ],
+    id: "louis-vuitton-fastline-messenger-bag-mens-black",
+    category: "bags",
+    name: "FASTLINE MESSENGER BAG MENS - BLACK",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON FASTLINE MESSENGER BAG MENS - BLACK.png.webp",
   },
+
   {
-    id: "sun-04",
-    category: "sunglasses",
-    name: "GG0061S",
+    id: "gucci-gg-supreme-belt-bag",
+    category: "bags",
+    name: "GG SUPREME BELT BAG",
     brand: "Gucci",
-    price: 189,
-    priceLabel: "from $189",
-    image: ribbon.glasses,
-    tag: "Luxury",
-    description:
-      "Oversized square frame with gold GG logo temples and gradient lenses. Statement eyewear with Italian flair.",
-    specs: [
-      { label: "Frame", value: "Acetate, tortoise" },
-      { label: "Lens", value: "Gradient brown, UV400" },
-      { label: "Size", value: "54 mm lens width" },
-      { label: "Detail", value: "Gold GG temples" },
-    ],
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/GUCCI GG SUPREME BELT BAG.jpg.webp",
   },
+
   {
-    id: "sun-05",
-    category: "sunglasses",
-    name: "Cat Eye",
-    brand: "Saint Laurent",
-    price: 199,
-    priceLabel: "from $199",
-    image: ribbon.glasses,
-    description:
-      "Angular cat-eye silhouette with slim metal frame and dark lenses. Parisian chic for sun-soaked days.",
-    specs: [
-      { label: "Frame", value: "Metal, gold tone" },
-      { label: "Lens", value: "Dark grey, UV400" },
-      { label: "Size", value: "52 mm lens width" },
-      { label: "Style", value: "Cat-eye" },
-    ],
+    id: "louis-vuitton-pochette-voyage-monogram-bag-grey-blue",
+    category: "bags",
+    name: "POCHETTE VOYAGE MONOGRAM BAG - GREY BLUE",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON POCHETTE VOYAGE MONOGRAM BAG - GREY BLUE.png.webp",
   },
+
   {
-    id: "sun-06",
-    category: "sunglasses",
-    name: "Pilot Gradient",
-    brand: "Tom Ford",
-    price: 219,
-    priceLabel: "from $219",
-    image: ribbon.glasses,
-    description:
-      "Double-bridge aviator with gradient lenses and signature T hinge. Understated luxury with impeccable finish.",
-    specs: [
-      { label: "Frame", value: "Titanium, silver" },
-      { label: "Lens", value: "Gradient blue, UV400" },
-      { label: "Size", value: "59 mm lens width" },
-      { label: "Detail", value: "T-logo hinges" },
-    ],
+    id: "gucci-small-gg-crossbody-bag-men-black",
+    category: "bags",
+    name: "SMALL GG CROSSBODY BAG MEN - BLACK",
+    brand: "Gucci",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/GUCCI SMALL GG CROSSBODY BAG MEN - BLACK.png.webp",
+    images: ["/images/Bags/GUCCI SMALL GG CROSSBODY BAG MEN - BLACK.png.webp","/images/Bags/GUCCI SMALL GG CROSSBODY BAG MEN - BLACK2.png.webp"],
   },
+
   {
-    id: "sun-07",
-    category: "sunglasses",
-    name: "Square Bold",
-    brand: "Off-White",
-    price: 179,
-    priceLabel: "from $179",
-    image: ribbon.glasses,
-    tag: "Streetwear",
-    description:
-      "Chunky square acetate frame with branded temple text. Street-luxury crossover with full UV protection.",
-    specs: [
-      { label: "Frame", value: "Acetate, black" },
-      { label: "Lens", value: "Grey, UV400" },
-      { label: "Size", value: "53 mm lens width" },
-      { label: "Detail", value: "Branded temples" },
-    ],
+    id: "louis-vuitton-trio-messenger-bag-grey",
+    category: "bags",
+    name: "TRIO MESSENGER BAG - GREY",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON TRIO MESSENGER BAG - GREY.png.webp",
   },
+
+  {
+    id: "louis-vuitton-trio-messenger-bag-light-blue",
+    category: "bags",
+    name: "TRIO MESSENGER BAG - LIGHT BLUE",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON TRIO MESSENGER BAG - LIGHT BLUE.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-trio-messenger-bag-mens-grey-blue",
+    category: "bags",
+    name: "TRIO MESSENGER BAG MENS - GREY BLUE",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON TRIO MESSENGER BAG MENS - GREY BLUE.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-trio-monogram-messenger-bag-mens-black",
+    category: "bags",
+    name: "TRIO MONOGRAM MESSENGER BAG MENS - BLACK",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/LOUIS VUITTON TRIO MONOGRAM MESSENGER BAG MENS - BLACK.png.webp",
+  },
+
+  {
+    id: "dior-zipped-2-0-messenger-bag-blue-and-black",
+    category: "bags",
+    name: "ZIPPED 2.0 MESSENGER BAG - BLUE AND BLACK",
+    brand: "Dior",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Bags/DIOR ZIPPED 2.0 MESSENGER BAG - BLUE AND BLACK.png.webp",
+  },
+
+  {
+    id: "cartier-love-classic-bracelet-gold",
+    category: "jewelry",
+    name: "LOVE CLASSIC BRACELET - GOLD",
+    brand: "Cartier",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/CARTIER LOVE CLASSIC BRACELET - GOLD.png.webp",
+  },
+
+  {
+    id: "cartier-love-classic-bracelet-gold-diamante",
+    category: "jewelry",
+    name: "LOVE CLASSIC BRACELET - GOLD DIAMANTE",
+    brand: "Cartier",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/CARTIER LOVE CLASSIC BRACELET - GOLD DIAMANTE.png.webp",
+  },
+
+  {
+    id: "cartier-love-classic-bracelet-silver",
+    category: "jewelry",
+    name: "LOVE CLASSIC BRACELET - SILVER",
+    brand: "Cartier",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/CARTIER LOVE CLASSIC BRACELET - SILVER.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-bracelet-gold",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA BRACELET - GOLD",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET - GOLD.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-bracelet-gold-black",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA BRACELET - GOLD BLACK",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET - GOLD BLACK.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-bracelet-gold-red",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA BRACELET - GOLD RED",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET - GOLD RED.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-bracelet-gold-white",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA BRACELET - GOLD WHITE",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET - GOLD WHITE.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-bracelet-gold-white-gold",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA BRACELET - GOLD WHITE GOLD",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET - GOLD WHITE GOLD.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-bracelet-silver-navy-blue",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA BRACELET - SILVER NAVY BLUE",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET - SILVER NAVY BLUE.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-bracelet-small-pendants-gold-black",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA BRACELET SMALL PENDANTS - GOLD BLACK",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET SMALL PENDANTS - GOLD BLACK.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-necklace-silver-green",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA NECKLACE - SILVER GREEN",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA NECKLACE - SILVER GREEN.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-necklace-small-pendants-gold",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - GOLD",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - GOLD.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-necklace-small-pendants-gold-black",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - GOLD BLACK",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - GOLD BLACK.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-necklace-small-pendants-gold-white",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - GOLD WHITE",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - GOLD WHITE.png.webp",
+  },
+
+  {
+    id: "van-cleef-vintage-alhambra-necklace-small-pendants-silver-black",
+    category: "jewelry",
+    name: "VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - SILVER BLACK",
+    brand: "Van Cleef",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA NECKLACE SMALL PENDANTS - SILVER BLACK.png.webp",
+  },
+
+  {
+    id: "dior-b27-uptown-low-top-sneaker-black",
+    category: "shoes",
+    name: "B27 UPTOWN LOW-TOP SNEAKER - BLACK",
+    brand: "Dior",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/DIOR B27 UPTOWN LOW-TOP SNEAKER - BLACK.png.webp",
+  },
+
+  {
+    id: "dior-b30-countdown-sneaker-black",
+    category: "shoes",
+    name: "B30 COUNTDOWN SNEAKER - BLACK",
+    brand: "Dior",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/DIOR B30 COUNTDOWN SNEAKER - BLACK.png.webp",
+  },
+
+  {
+    id: "dior-b30-countdown-sneaker-white-cream",
+    category: "shoes",
+    name: "B30 COUNTDOWN SNEAKER - WHITE CREAM",
+    brand: "Dior",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/DIOR B30 COUNTDOWN SNEAKER - WHITE CREAM.png.webp",
+  },
+
+  {
+    id: "hermes-bouncing-sneaker-black",
+    category: "shoes",
+    name: "BOUNCING SNEAKER - BLACK",
+    brand: "Hermes",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/HERMES BOUNCING SNEAKER - BLACK.png.webp",
+  },
+
+  {
+    id: "hermes-bouncing-sneaker-black-black",
+    category: "shoes",
+    name: "BOUNCING SNEAKER - BLACK BLACK",
+    brand: "Hermes",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/HERMES BOUNCING SNEAKER - BLACK BLACK.png.webp",
+  },
+
+  {
+    id: "hermes-bouncing-sneaker-black-white-logo",
+    category: "shoes",
+    name: "BOUNCING SNEAKER - BLACK WHITE LOGO",
+    brand: "Hermes",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/HERMES BOUNCING SNEAKER - BLACK WHITE LOGO.png.webp",
+  },
+
+  {
+    id: "dior-chrono-sneaker-white",
+    category: "shoes",
+    name: "CHRONO SNEAKER - WHITE",
+    brand: "Dior",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/DIOR CHRONO SNEAKER - WHITE.png.webp",
+  },
+
+  {
+    id: "hermes-jump-sneaker-white-black",
+    category: "shoes",
+    name: "JUMP SNEAKER - WHITE BLACK",
+    brand: "Hermes",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/HERMES JUMP SNEAKER - WHITE BLACK.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-runner-tatic-sneaker-black",
+    category: "shoes",
+    name: "RUNNER TATIC SNEAKER - BLACK",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/LOUIS VUITTON RUNNER TATIC SNEAKER - BLACK.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-trainer-sneaker-black",
+    category: "shoes",
+    name: "TRAINER SNEAKER BLACK",
+    brand: "Louis Vuitton",
+    price: 450,
+    priceLabel: "$450",
+    image: "/images/Shoes/LOUIS VUITTON TRAINER SNEAKER BLACK.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-lv-evidence-sunglasses-premium",
+    category: "sunglasses",
+    name: "LV EVIDENCE SUNGLASSES - PREMIUM",
+    brand: "Louis Vuitton",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/sunglasses/LOUIS VUITTON LV EVIDENCE SUNGLASSES - PREMIUM.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-lv-waimea-l-sunglasses",
+    category: "sunglasses",
+    name: "LV WAIMEA L SUNGLASSES",
+    brand: "Louis Vuitton",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/sunglasses/LOUIS VUITTON LV WAIMEA L SUNGLASSES.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-lv-waimea-l-sunglasses-premium",
+    category: "sunglasses",
+    name: "LV WAIMEA L SUNGLASSES - PREMIUM",
+    brand: "Louis Vuitton",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/sunglasses/LOUIS VUITTON LV WAIMEA L SUNGLASSES - PREMIUM.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-lv-waimea-sunglasses",
+    category: "sunglasses",
+    name: "LV WAIMEA SUNGLASSES",
+    brand: "Louis Vuitton",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/sunglasses/LOUIS VUITTON LV WAIMEA SUNGLASSES.png.webp",
+  },
+
+  {
+    id: "louis-vuitton-lv-waimea-sunglasses-premium",
+    category: "sunglasses",
+    name: "LV WAIMEA SUNGLASSES - PREMIUM",
+    brand: "Louis Vuitton",
+    price: 350,
+    priceLabel: "$350",
+    image: "/images/sunglasses/LOUIS VUITTON LV WAIMEA SUNGLASSES - PREMIUM.png.webp",
+  },
+
+  {
+    id: "rolex-datejust-41-fluted-roman-slate-dial",
+    category: "watches",
+    name: "DATEJUST 41 FLUTED ROMAN SLATE DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DATEJUST 41 FLUTED ROMAN SLATE DIAL.png.webp",
+  },
+
+  {
+    id: "rolex-datejust-41-fluted-two-tone-black-dial",
+    category: "watches",
+    name: "DATEJUST 41 FLUTED TWO TONE BLACK DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DATEJUST 41 FLUTED TWO TONE BLACK DIAL.png.webp",
+  },
+
+  {
+    id: "rolex-datejust-41-two-tone-gold-dial",
+    category: "watches",
+    name: "DATEJUST 41 TWO TONE GOLD DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DATEJUST 41 TWO TONE GOLD DIAL.png.webp",
+  },
+
+  {
+    id: "rolex-datejust-fluted-mint-green-jubilee-silver",
+    category: "watches",
+    name: "DATEJUST FLUTED MINT GREEN JUBILEE - SILVER",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DATEJUST FLUTED MINT GREEN JUBILEE - SILVER.png.webp",
+  },
+
+  {
+    id: "rolex-day-date-40-roman-green-dial",
+    category: "watches",
+    name: "DAY DATE 40 ROMAN GREEN DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DAY DATE 40 ROMAN GREEN DIAL.png.webp",
+  },
+
+  {
+    id: "rolex-day-date-40-rose-chocolate-roman-dial",
+    category: "watches",
+    name: "DAY DATE 40 ROSE CHOCOLATE ROMAN DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DAY DATE 40 ROSE CHOCOLATE ROMAN DIAL.png.webp",
+  },
+
+  {
+    id: "rolex-day-date-40-yellow-gold-black-dial",
+    category: "watches",
+    name: "DAY DATE 40 YELLOW GOLD BLACK DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DAY DATE 40 YELLOW GOLD BLACK DIAL.png.webp",
+  },
+
+  {
+    id: "rolex-daytona-41-oysterflex-tiffany-dial",
+    category: "watches",
+    name: "DAYTONA 41 OYSTERFLEX TIFFANY DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX DAYTONA 41 OYSTERFLEX TIFFANY DIAL.png.webp",
+  },
+
+  {
+    id: "rolex-gmt-master-ii-batman-silver-black-dial",
+    category: "watches",
+    name: "GMT MASTER II BATMAN SILVER BLACK DIAL",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX GMT MASTER II BATMAN SILVER BLACK DIAL.png.webp",
+  },
+
+  {
+    id: "patek-phillippe-nautilus-black",
+    category: "watches",
+    name: "NAUTILUS BLACK",
+    brand: "Patek Phillippe",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/PATEK PHILLIPPE NAUTILUS BLACK.png.webp",
+  },
+
+  {
+    id: "patek-phillippe-nautilus-gold-brown",
+    category: "watches",
+    name: "NAUTILUS GOLD BROWN",
+    brand: "Patek Phillippe",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/PATEK PHILLIPPE NAUTILUS GOLD BROWN.png.webp",
+  },
+
+  {
+    id: "audemars-piguet-royal-oak-41-silver-black",
+    category: "watches",
+    name: "ROYAL OAK 41 - SILVER BLACK",
+    brand: "Audemars Piguet",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/AUDEMARS PIGUET ROYAL OAK 41 - SILVER BLACK.png.webp",
+  },
+
+  {
+    id: "rolex-submariner-41mm-black",
+    category: "watches",
+    name: "SUBMARINER 41MM - BLACK",
+    brand: "Rolex",
+    price: 950,
+    priceLabel: "$950",
+    image: "/images/watches/ROLEX SUBMARINER 41MM - BLACK.png.webp",
+  }
 ];
+
+export function getProductImages(product) {
+  return product.images?.length ? product.images : [product.image];
+}
 
 export function getProductById(id) {
   return PRODUCTS.find((p) => p.id === id) ?? null;

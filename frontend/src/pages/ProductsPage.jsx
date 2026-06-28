@@ -75,8 +75,8 @@ export default function ProductsPage() {
             <span className="text-accent">Vault.</span>
           </h1>
           <p className="mt-4 text-white/75 text-sm leading-relaxed max-w-xs mx-auto">
-            Browse our full range of super-clone bags, watches, shoes, and
-            eyewear — all available to order in one tap.
+            Browse our full range of super-clone bags, watches, shoes, jewelry,
+            and eyewear — all available to order in one tap.
           </p>
         </motion.div>
 

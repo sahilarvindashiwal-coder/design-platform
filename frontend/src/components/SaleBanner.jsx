@@ -10,16 +10,16 @@ export default function SaleBanner() {
       data-testid="sale-banner"
     >
       <span
-        className="flex-shrink-0 px-2 py-0.5 text-[9px] uppercase tracking-[0.15em] font-bold text-white"
+        className="flex-shrink-0 px-2 py-0.5 text-[14px] uppercase tracking-[0.15em] font-bold text-white"
         style={{ backgroundColor: BRAND_COLORS.red }}
       >
         Sale
       </span>
-      <span className="text-[9px] uppercase tracking-[0.12em] text-white/75 font-semibold">
+      <span className="text-[14px] uppercase tracking-[0.12em] text-white/75 font-semibold">
         Ends in
       </span>
       <span
-        className="text-[10px] font-bold tabular-nums tracking-wider"
+        className="text-[16px] font-bold tabular-nums tracking-wider"
         style={{ color: BRAND_COLORS.yellow }}
         data-testid="sale-banner-countdown"
       >
