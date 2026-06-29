@@ -4,20 +4,20 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { COLLECTION, WHATSAPP_URL } from "../data";
 import { BRAND_COLORS } from "../constants/theme";
 
-export default function Collection() {
+export default function Collection({ embedded = false }) {
   return (
     <section
       id="collection"
-      className="relative py-12 bg-transparent"
+      className={`relative bg-transparent ${embedded ? "py-6" : "py-12"}`}
       data-testid="collection-section"
     >
-      <div className="px-4">
+      <div className={`${embedded ? "px-0" : "px-4"}`}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8 content-panel px-5 py-6"
+          className={`text-center mb-8 content-panel px-5 ${embedded ? "py-4" : "py-6"}`}
         >
           <span
             className="text-[10px] uppercase tracking-[0.3em] font-bold"

@@ -6,8 +6,8 @@ import SiteLayout from "./components/layout/SiteLayout";
 import Hero from "./components/Hero";
 import BrandMarquee from "./components/BrandMarquee";
 import TrustSection from "./components/TrustSection";
-import Collection from "./components/Collection";
 import Craftsmanship from "./components/Craftsmanship";
+import { SITE_SECTIONS } from "./config/siteSections";
 import HowToOrder from "./components/HowToOrder";
 import Testimonials from "./components/Testimonials";
 import FaqAndCTA from "./components/FaqAndCTA";
@@ -49,10 +49,9 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
-      <BrandMarquee />
+      {SITE_SECTIONS.showBrandMarquee && <BrandMarquee />}
       <TrustSection />
-      <Collection />
-      <Craftsmanship />
+      {SITE_SECTIONS.showCraftsmanship && <Craftsmanship />}
       <HowToOrder />
       <Testimonials />
       <FaqAndCTA />

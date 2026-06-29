@@ -5,6 +5,7 @@ import TrustBar from "./TrustBar";
 import WhatsAppCTA from "./WhatsAppCTA";
 import { BRAND, WHATSAPP_URL } from "../data";
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "../data/policies";
+import { SITE_SECTIONS } from "../config/siteSections";
 import { BRAND_COLORS } from "../constants/theme";
 
 const COLS = [
@@ -21,22 +22,24 @@ const COLS = [
 export default function Footer() {
   return (
     <footer className="relative bg-transparent" data-testid="footer">
-      <TrustBar />
+      {SITE_SECTIONS.showTrustBar && <TrustBar />}
 
       <div className="border-t border-white/10 pt-10 pb-8">
         <div className="px-4">
-          <div className="content-panel p-5 mb-8">
-            <BrandLogo size="lg" className="mb-4" />
-            <p className="text-white/80 text-sm leading-relaxed">
-              Your one-stop vault for mirror-quality designer bags, timepieces,
-              sneakers, and eyewear — hand-inspected, QC-verified, and shipped
-              discreetly to 38 countries.
-            </p>
-            <WhatsAppCTA
-              testId="footer-whatsapp-cta"
-              buttonClassName="mt-5 px-6 py-3 text-[10px] uppercase tracking-[0.2em]"
-            />
-          </div>
+          {SITE_SECTIONS.showFooterAbout && (
+            <div className="content-panel p-5 mb-8">
+              <BrandLogo size="lg" className="mb-4" />
+              <p className="text-white/80 text-sm leading-relaxed">
+                Your one-stop vault for mirror-quality designer bags, timepieces,
+                sneakers, and eyewear — hand-inspected, QC-verified, and shipped
+                discreetly to 38 countries.
+              </p>
+              <WhatsAppCTA
+                testId="footer-whatsapp-cta"
+                buttonClassName="mt-5 px-6 py-3 text-[10px] uppercase tracking-[0.2em]"
+              />
+            </div>
+          )}
 
           <div className="grid grid-cols-2 gap-6 mb-8">
             {COLS.map((c, i) => (
@@ -99,26 +102,34 @@ export default function Footer() {
             </span>
           </a>
 
-          <div className="border-t border-white/10 pt-8 pb-6">
-            <div className="display font-black text-white/[0.06] text-[22vw] leading-none tracking-tighter text-center select-none uppercase">
-              {BRAND}
-            </div>
+          <div
+            className="flex items-center gap-4 pt-6 border-t border-white/10 text-[9px] text-white/50"
+            data-testid="footer-policy-links"
+          >
+            <Link to="/privacy" className="hover:text-white/80 transition-colors">
+              Privacy
+            </Link>
+            <Link to="/terms" className="hover:text-white/80 transition-colors">
+              Terms
+            </Link>
+            <Link to="/returns" className="hover:text-white/80 transition-colors">
+              Returns
+            </Link>
           </div>
 
-          <div className="flex flex-col gap-3 text-[9px] text-white/50">
-            <div>© {new Date().getFullYear()} {BRAND}. All rights reserved.</div>
-            <div className="flex items-center gap-4">
-              <Link to="/privacy" className="hover:text-white/80 transition-colors">
-                Privacy
-              </Link>
-              <Link to="/terms" className="hover:text-white/80 transition-colors">
-                Terms
-              </Link>
-              <Link to="/returns" className="hover:text-white/80 transition-colors">
-                Returns
-              </Link>
-            </div>
-          </div>
+          {SITE_SECTIONS.showFooterLegal && (
+            <>
+              <div className="border-t border-white/10 pt-8 pb-6 mt-6">
+                <div className="display font-black text-white/[0.06] text-[22vw] leading-none tracking-tighter text-center select-none uppercase">
+                  {BRAND}
+                </div>
+              </div>
+
+              <div className="text-[9px] text-white/50">
+                © {new Date().getFullYear()} {BRAND}. All rights reserved.
+              </div>
+            </>
+          )}
         </div>
       </div>
     </footer>

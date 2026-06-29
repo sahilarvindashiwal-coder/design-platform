@@ -2,6 +2,7 @@ import Navigation from "../Navigation";
 import Footer from "../Footer";
 import FloatingWhatsApp from "../FloatingWhatsApp";
 import RibbonSiteBackground from "../RibbonSiteBackground";
+import { SITE_SECTIONS } from "../../config/siteSections";
 
 export default function SiteLayout({ children }) {
   return (
@@ -11,7 +12,7 @@ export default function SiteLayout({ children }) {
         <Navigation />
         {children}
         <Footer />
-        <FloatingWhatsApp />
+        {SITE_SECTIONS.showFloatingWhatsApp && <FloatingWhatsApp />}
       </div>
     </div>
   );

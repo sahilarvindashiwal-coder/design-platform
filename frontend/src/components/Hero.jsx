@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import TrustBar from "./TrustBar";
 import WhatsAppCTA from "./WhatsAppCTA";
+import Collection from "./Collection";
 import { ASSETS } from "../config/assets";
+import { SITE_SECTIONS } from "../config/siteSections";
 import { BRAND_COLORS } from "../constants/theme";
 
 export default function Hero() {
@@ -64,15 +66,18 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-col gap-3">
             <WhatsAppCTA testId="hero-whatsapp-cta" />
-            <Link
-              to="/products"
-              className="inline-flex items-center justify-center gap-1.5 text-[10px] uppercase tracking-[0.25em] text-white/80 hover:text-[#FFEB3B] transition-colors py-1"
-              data-testid="hero-explore-cta"
-            >
-              Shop The Collection
-              <ChevronDown className="w-3.5 h-3.5" strokeWidth={2} />
-            </Link>
           </div>
+
+          <Collection embedded />
+
+          <Link
+            to="/products"
+            className="mt-6 inline-flex items-center justify-center gap-1.5 text-[10px] uppercase tracking-[0.25em] text-white/80 hover:text-[#FFEB3B] transition-colors py-1 w-full"
+            data-testid="hero-explore-cta"
+          >
+            Shop The Collection
+            <ChevronDown className="w-3.5 h-3.5" strokeWidth={2} />
+          </Link>
 
           <div className="mt-10 pt-6 border-t border-white/10 grid grid-cols-4 gap-2">
             <Stat n="14k+" label="Happy Clients" />
@@ -83,7 +88,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <TrustBar />
+      {SITE_SECTIONS.showTrustBar && <TrustBar />}
     </section>
   );
 }
