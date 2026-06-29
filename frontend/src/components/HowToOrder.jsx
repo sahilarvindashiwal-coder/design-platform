@@ -14,13 +14,13 @@ const STEPS = [
     n: "02",
     icon: ShoppingBag,
     title: "Confirm & Pay Securely",
-    desc: "We send a secure payment link (card, bank transfer, or USDT). Your order enters our QC bench within hours of payment.",
+    desc: "We send bank details. Your order gets processed and enters our QC bench within hours of payment",
   },
   {
     n: "03",
     icon: PackageCheck,
     title: "Approve QC & Receive",
-    desc: "We send pre-ship photos for your approval. Then tracked, insured delivery in discreet packaging — usually 7–10 working days.",
+    desc: "We send pre-ship photos for your approval. if all checks out, we will send out the order within 24 hours",
   },
 ];
 
@@ -28,7 +28,7 @@ export default function HowToOrder() {
   return (
     <section
       id="process"
-      className="relative py-12 bg-transparent"
+      className="relative py-6 bg-transparent"
       data-testid="process-section"
     >
       <div className="px-4">

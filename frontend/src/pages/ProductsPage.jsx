@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL } from "../data";
@@ -44,7 +44,16 @@ function CategorySection({ category, products }) {
 }
 
 export default function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState(ALL_TAB);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategory = searchParams.get("category") || ALL_TAB;
+
+  const setActiveCategory = (category) => {
+    if (category === ALL_TAB) {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category });
+    }
+  };
 
   const filteredProducts =
     activeCategory === ALL_TAB
@@ -52,7 +61,7 @@ export default function ProductsPage() {
       : getProductsByCategory(activeCategory);
 
   return (
-    <main className="pt-header pb-12 bg-transparent" data-testid="products-page">
+    <main className="pt-header pb-6 bg-transparent" data-testid="products-page">
       <div className="px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

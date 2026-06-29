@@ -41,7 +41,7 @@ export default function Hero() {
               style={{ color: BRAND_COLORS.yellow }}
               data-testid="hero-eyebrow"
             >
-              Bags · Watches · Shoes · Eyewear
+              Bags · Watches · Shoes · More
             </p>
             <span className="h-px flex-1 bg-white/15" />
           </div>
@@ -59,9 +59,9 @@ export default function Hero() {
             className="mt-5 text-center text-white/85 text-sm leading-relaxed max-w-xs mx-auto"
             data-testid="hero-subline"
           >
-            Premium 1:1 super-clones of the world&apos;s most coveted designer
-            bags, timepieces, sneakers, and eyewear — hand-inspected and delivered
-            discreetly worldwide.
+            Melbourne’s home for luxury-inspired bags, jewellery, watches, and accessories.
+            <br />
+            Located in Tullamarine VIC with 250+ products in stock and free delivery Australia-wide.
           </p>
 
           <div className="mt-8 flex flex-col gap-3">
@@ -80,10 +80,10 @@ export default function Hero() {
           </Link>
 
           <div className="mt-10 pt-6 border-t border-white/10 grid grid-cols-4 gap-2">
-            <Stat n="14k+" label="Happy Clients" />
-            <Stat n="48h" label="Pre-Ship QC" />
-            <Stat n="1yr" label="Warranty" />
-            <Stat n="38" label="Countries" />
+            <Stat n="7k+" label="HAPPY CLIENTS" />
+            <Stat n="48h" label="PRE-SHIP QC" />
+            <Stat n="1yr" label="WARRANTY" />
+            <Stat n="Free" label="express postage" />
           </div>
         </motion.div>
       </div>

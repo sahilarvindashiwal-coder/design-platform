@@ -16,6 +16,8 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
 import ReturnsPolicyPage from "./pages/ReturnsPolicyPage";
+import SecondaryCollection from "./components/SecondaryCollection";
+import FeaturedPicksCollection from "./components/FeaturedPicksCollection";
 
 const LandingPage = () => {
   useLenis();
@@ -52,8 +54,10 @@ const LandingPage = () => {
       {SITE_SECTIONS.showBrandMarquee && <BrandMarquee />}
       <TrustSection />
       {SITE_SECTIONS.showCraftsmanship && <Craftsmanship />}
+      <SecondaryCollection />
       <HowToOrder />
       <Testimonials />
+      <FeaturedPicksCollection />
       <FaqAndCTA />
     </>
   );

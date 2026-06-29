@@ -603,8 +603,15 @@ export function getCategoryLabel(categoryId) {
 }
 
 export function productWhatsAppUrl(product) {
-  const text = encodeURIComponent(
-    `Hi Designer Vault, I'd like to enquire about the ${product.brand} ${product.name}.`
-  );
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  const brand = product.brand || (product.model ? product.name : "");
+  const name = product.brand ? product.name : (product.model || product.name || "Product");
+  const fullName = brand ? `${brand} ${name}` : name;
+  const category = product.category || "Item";
+  const price = product.priceLabel || product.price || "";
+  const origin = window.location.origin;
+  const imgPath = product.image || product.img || "";
+  const imageUrl = imgPath.startsWith("http") ? imgPath : `${origin}${imgPath}`;
+
+  const text = `Hi! I'm interested in *${fullName}* (${category}) priced at *${price}*. Could you please share more details? ${imageUrl}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }

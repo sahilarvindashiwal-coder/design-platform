@@ -60,27 +60,24 @@ export default function TermsPage() {
         </p>
       </PolicySection>
 
-      <PolicySection title="6. Shipping & Delivery">
+      <PolicySection id="shipping" title="6. Shipping & Delivery">
         <ul className="list-disc pl-5 space-y-2 text-white/80">
-          <li>We ship worldwide to supported destinations</li>
+          <li>We offer free shipping Australia-wide via express post.</li>
+          <li>If you are in Melbourne, you are welcome to visit our showroom in Tullamarine VIC.</li>
           <li>
-            Delivery times are estimates (typically 7–14 business days after dispatch; international
-            customs may cause delays)
+            Delivery times are estimates (typically processed and shipped within 24 hours of QC approval).
           </li>
           <li>
-            Risk of loss passes to you upon delivery to the carrier unless otherwise required by law
-          </li>
-          <li>
-            You are responsible for import duties, taxes, and customs clearance in your country
+            Risk of loss passes to you upon delivery to the carrier unless otherwise required by law.
           </li>
           <li>
             Provide accurate shipping details; we are not liable for failed delivery due to incorrect
-            addresses
+            addresses.
           </li>
         </ul>
       </PolicySection>
 
-      <PolicySection title="7. QC Approval">
+      <PolicySection id="qc-approval" title="7. QC Approval">
         <p>
           Where pre-ship QC photos are provided, you must approve or raise concerns within{" "}
           <strong className="text-white">48 hours</strong>. Silence after 48 hours may be treated as
@@ -88,7 +85,7 @@ export default function TermsPage() {
         </p>
       </PolicySection>
 
-      <PolicySection title="8. Warranty">
+      <PolicySection id="warranty" title="8. Warranty">
         <p>
           Products include a <strong className="text-white">1-year warranty</strong> against
           manufacturing defects under normal use. Warranty does not cover wear and tear, misuse,

@@ -15,7 +15,7 @@ export default function Testimonials() {
   return (
     <section
       id="stories"
-      className="relative py-12 bg-transparent overflow-hidden"
+      className="relative py-6 bg-transparent overflow-hidden"
       data-testid="testimonials-section"
     >
       <div className="relative px-4">

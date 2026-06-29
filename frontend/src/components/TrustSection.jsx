@@ -7,7 +7,7 @@ const PILLARS = [
   {
     icon: Gem,
     title: "1:1 Mirror Quality",
-    desc: "Premium leathers, canvases, movements, and sole compounds — every detail matched to the authentic reference.",
+    desc: "Premium quality guarantee. 100% real leather. Swiss-certified movements. Highest quality, guaranteed  because at Designer Vault, excellence is the only standard we know.",
   },
   {
     icon: Cog,
@@ -22,14 +22,14 @@ const PILLARS = [
   {
     icon: Truck,
     title: "Discreet Worldwide Shipping",
-    desc: "Insured, tracked, customs-aware delivery to 38 countries. Unbranded packaging. Most orders in 7–10 days.",
+    desc: "Free express post: Can't make it to the showroom? No problem. Designer Vault offers free shipping Australia wide  luxury delivered to your door.",
   },
 ];
 
 export default function TrustSection() {
   return (
     <section
-      className="relative py-12 bg-transparent"
+      className="relative py-6 bg-transparent"
       data-testid="trust-section"
     >
       <div className="px-4">
@@ -69,10 +69,7 @@ export default function TrustSection() {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="mt-5 text-white/90 text-sm leading-relaxed"
           >
-            We partner with top-tier factories to deliver mirror-quality replicas
-            of luxury bags, watches, sneakers, and eyewear. Real materials, real
-            QC photos, real prices — no stock images, no scripted replies. What
-            you see is what you get.
+            We work with trusted manufacturing partners to offer high-quality bags, watches, sneakers, and eyewear. Every item is carefully inspected before dispatch, with real product photos and transparent pricing—no stock images, no scripted responses. What you see is what you get.
           </motion.p>
 
           <motion.div

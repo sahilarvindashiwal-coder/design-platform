@@ -1,7 +1,7 @@
 import { ASSETS } from "./config/assets";
 
-// Phone number for orders — placeholder
-export const WHATSAPP_NUMBER = "15551234567";
+// Phone number for orders
+export const WHATSAPP_NUMBER = "61409077106";
 export const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi Designer Vault, I'd like to enquire about your luxury collection."
 );
@@ -15,6 +15,7 @@ export const COLLECTION = [
     name: "Louis Vuitton",
     model: "Monogram Sling",
     price: "$450",
+    category: "bags",
     span: "md:col-span-4",
     img: ASSETS.ribbon.bagSling,
     tag: "Best Seller",
@@ -24,6 +25,7 @@ export const COLLECTION = [
     name: "Rolex",
     model: "Submariner Date",
     price: "$950",
+    category: "watches",
     span: "md:col-span-4",
     img: ASSETS.ribbon.watchBlue,
     tag: "Iconic",
@@ -33,6 +35,7 @@ export const COLLECTION = [
     name: "Louis Vuitton",
     model: "Capucines BB",
     price: "$450",
+    category: "bags",
     span: "md:col-span-4",
     img: ASSETS.ribbon.bagBlue,
     tag: "New Arrival",
@@ -42,6 +45,7 @@ export const COLLECTION = [
     name: "Nike",
     model: "Air Jordan 1 Retro",
     price: "$450",
+    category: "shoes",
     span: "md:col-span-6",
     img: ASSETS.ribbon.shoeBlack,
     tag: "Street Classic",
@@ -51,9 +55,88 @@ export const COLLECTION = [
     name: "Audemars Piguet",
     model: "Royal Oak 41mm",
     price: "$950",
+    category: "watches",
     span: "md:col-span-6",
     img: ASSETS.ribbon.watchGold,
     tag: "Heritage",
+  },
+];
+
+export const SECONDARY_COLLECTION = [
+  {
+    id: "lv-alma-gold",
+    name: "Louis Vuitton",
+    model: "Alma BB Gold",
+    price: "$450",
+    category: "bags",
+    img: ASSETS.ribbon.bagGold,
+  },
+  {
+    id: "rolex-datejust-silver",
+    name: "Rolex",
+    model: "Datejust 41 Silver",
+    price: "$950",
+    category: "watches",
+    img: ASSETS.ribbon.watchSilver,
+  },
+  {
+    id: "dior-b27-white",
+    name: "Dior",
+    model: "B27 Uptown White",
+    price: "$450",
+    category: "shoes",
+    img: ASSETS.ribbon.shoeWhite,
+  },
+  {
+    id: "lv-waimea-sunglasses",
+    name: "Louis Vuitton",
+    model: "LV Waimea Sunglasses",
+    price: "$350",
+    category: "sunglasses",
+    img: ASSETS.ribbon.glasses,
+  },
+];
+
+export const FEATURED_PICKS_COLLECTION = [
+  {
+    id: "rolex-gmt-master-ii-batman",
+    name: "Rolex",
+    model: "GMT-Master II Batman",
+    price: "$950",
+    category: "watches",
+    img: "/images/watches/ROLEX GMT MASTER II BATMAN SILVER BLACK DIAL.png.webp",
+  },
+  {
+    id: "van-cleef-alhambra-gold",
+    name: "Van Cleef",
+    model: "Vintage Alhambra Gold",
+    price: "$350",
+    category: "jewelry",
+    img: "/images/Jewellery/VAN CLEEF VINTAGE ALHAMBRA BRACELET - GOLD.png.webp",
+  },
+  {
+    id: "lv-avenue-mini-slingbag",
+    name: "Louis Vuitton",
+    model: "Avenue Mini Slingbag",
+    price: "$450",
+    category: "bags",
+    img: "/images/Bags/LOUIS VUITTON AVENUE MINI SLINGBAG PM MENS - BLACK.png.webp",
+  },
+  {
+    id: "dior-b30-sneaker-black",
+    name: "Dior",
+    model: "B30 Countdown Sneaker",
+    price: "$450",
+    category: "shoes",
+    img: "/images/Shoes/DIOR B30 COUNTDOWN SNEAKER - BLACK.png.webp",
+  },
+  {
+    id: "lv-evidence-sunglasses",
+    name: "Louis Vuitton",
+    model: "LV Evidence Sunglasses",
+    price: "$350",
+    category: "sunglasses",
+    img: "/images/sunglasses/LOUIS VUITTON LV EVIDENCE SUNGLASSES - PREMIUM.png.webp",
   },
 ];
 
@@ -103,26 +186,26 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "How close are your products to the originals?",
-    a: "Our Super-Clone tier reproduces each piece at a 1:1 level — same materials, dimensions, hardware, and finishing as the authentic reference. Bags use matched leathers and canvases; watches feature sapphire crystal and Swiss-grade movements; shoes replicate exact panel shapes and sole details. Side-by-side, only a trained expert can tell.",
+    a: "We work with trusted manufacturing partners to deliver premium quality luxury-inspired bags, jewellery, watches, and accessories. Every item is matched to the authentic reference using real materials, canvases, and movements. Side-by-side, only a trained expert can tell.",
   },
   {
     q: "Do you send quality-check photos before shipping?",
-    a: "Yes. Every order is photographed on our QC bench before dispatch — stitching, hardware, movement timing, sole alignment, or lens clarity depending on the category. You approve before we ship. No surprises.",
+    a: "Yes. Every order is photographed on our QC bench before dispatch — stitching, hardware, movement timing, or sole alignment depending on the category. We send these pre-ship photos for your approval. If all checks out, we will send out your order within 24 hours.",
   },
   {
     q: "How does shipping work?",
-    a: "Discreet, fully tracked, insured worldwide delivery to 38 countries. Unbranded outer packaging, customs-aware declarations, and optional duty pre-pay on request. Most orders arrive within 7–10 working days.",
+    a: "We offer free shipping Australia-wide via express post. If you are in Melbourne, you are also welcome to visit our showroom in Tullamarine VIC. For all other orders, we ship tracked and insured directly to your door.",
   },
   {
     q: "What if something isn't right?",
-    a: "Every piece carries a 1-year warranty. If anything falls short, send us a short video and we'll arrange a free repair or replacement — backed by a real human team, not a chatbot.",
+    a: "Every piece carries a 1-year warranty against manufacturing defects under normal use. If anything falls short, send us a short video and we will arrange a free repair or replacement — backed by our team at Tullamarine VIC.",
   },
   {
     q: "How do I order?",
-    a: "Tap any Order on WhatsApp button on this site. Tell us what you want — bag, watch, shoe, or eyewear — share your size or reference, and we'll send a secure payment link. No accounts, no friction.",
+    a: "Tap any Contact Us on WhatsApp button on this site. Tell us what you want — bag, watch, shoe, or eyewear — share your size or reference, and we will send bank details to confirm your order.",
   },
   {
     q: "Are payments secure?",
-    a: "We accept bank transfer, USDT, and card via a secure Stripe link. Your payment details never touch our systems. Every transaction is protected.",
+    a: "We accept bank transfer. Once payment is confirmed, your order gets processed and enters our QC bench within hours of payment. Your transaction is safe and handled directly with our team.",
   },
 ];

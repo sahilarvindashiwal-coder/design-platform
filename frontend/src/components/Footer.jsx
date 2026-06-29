@@ -11,11 +11,11 @@ import { BRAND_COLORS } from "../constants/theme";
 const COLS = [
   {
     label: "Categories",
-    items: ["Bags", "Watches", "Shoes", "Sunglasses", "New Arrivals"],
+    items: ["Bags", "Watches", "Shoes", "Sunglasses", "All"],
   },
   {
     label: "Help",
-    items: ["Order on WhatsApp", "Shipping", "Warranty", "QC Photos", "FAQ"],
+    items: ["Contact Us", "Terms and Conditions", "Privacy Policy", "Return Policy", "FAQ"],
   },
 ];
 
@@ -30,9 +30,7 @@ export default function Footer() {
             <div className="content-panel p-5 mb-8">
               <BrandLogo size="lg" className="mb-4" />
               <p className="text-white/80 text-sm leading-relaxed">
-                Your one-stop vault for mirror-quality designer bags, timepieces,
-                sneakers, and eyewear — hand-inspected, QC-verified, and shipped
-                discreetly to 38 countries.
+                Melbourne’s home for luxury-inspired bags, jewellery, watches, and accessories. Located in Tullamarine VIC with 250+ products in stock and free delivery Australia-wide.
               </p>
               <WhatsAppCTA
                 testId="footer-whatsapp-cta"
@@ -51,29 +49,45 @@ export default function Footer() {
                   {c.label}
                 </div>
                 <ul className="space-y-2.5">
-                  {c.items.map((item) => (
-                    <li key={item}>
-                      {item === "Order on WhatsApp" ? (
-                        <a
-                          href={WHATSAPP_URL}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-white/70 hover:text-white text-xs transition-colors"
-                        >
-                          {item}
-                        </a>
-                      ) : item === "FAQ" ? (
-                        <Link
-                          to="/#faq"
-                          className="text-white/70 hover:text-white text-xs transition-colors"
-                        >
-                          {item}
-                        </Link>
-                      ) : (
-                        <span className="text-white/70 text-xs">{item}</span>
-                      )}
-                    </li>
-                  ))}
+                  {c.items.map((item) => {
+                    let to = null;
+                    let href = null;
+
+                    if (item === "Contact Us") href = WHATSAPP_URL;
+                    else if (item === "FAQ") to = "/#faq";
+                    else if (item === "Terms and Conditions") to = "/terms";
+                    else if (item === "Privacy Policy") to = "/privacy";
+                    else if (item === "Return Policy") to = "/returns";
+                    else if (item === "Bags") to = "/products?category=bags";
+                    else if (item === "Watches") to = "/products?category=watches";
+                    else if (item === "Shoes") to = "/products?category=shoes";
+                    else if (item === "Sunglasses") to = "/products?category=sunglasses";
+                    else if (item === "All") to = "/products";
+
+                    return (
+                      <li key={item}>
+                        {href ? (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-white/70 hover:text-white text-xs transition-colors"
+                          >
+                            {item}
+                          </a>
+                        ) : to ? (
+                          <Link
+                            to={to}
+                            className="text-white/70 hover:text-white text-xs transition-colors"
+                          >
+                            {item}
+                          </Link>
+                        ) : (
+                          <span className="text-white/70 text-xs">{item}</span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

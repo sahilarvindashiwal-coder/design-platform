@@ -34,7 +34,7 @@ export default function ProductDetailPage() {
   }
 
   return (
-    <main className="pt-header pb-12 bg-transparent" data-testid="product-detail-page">
+    <main className="pt-header pb-6 bg-transparent" data-testid="product-detail-page">
       <div className="px-4">
         <Link
           to="/products"

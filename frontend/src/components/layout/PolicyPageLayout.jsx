@@ -1,10 +1,23 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { BRAND_COLORS } from "../../constants/theme";
 
 export default function PolicyPageLayout({ title, lastUpdated, children, testId }) {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const targetId = hash.slice(1);
+      const el = document.getElementById(targetId);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      }
+    }
+  }, [hash]);
+
   return (
-    <main className="pt-header pb-12 bg-transparent" data-testid={testId}>
+    <main className="pt-header pb-6 bg-transparent" data-testid={testId}>
       <div className="px-4">
         <Link
           to="/"
@@ -37,9 +50,9 @@ export default function PolicyPageLayout({ title, lastUpdated, children, testId 
   );
 }
 
-export function PolicySection({ title, children }) {
+export function PolicySection({ title, children, ...props }) {
   return (
-    <section>
+    <section {...props}>
       <h2 className="display text-white text-lg uppercase tracking-tight mb-3">
         {title}
       </h2>

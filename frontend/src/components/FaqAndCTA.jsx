@@ -13,7 +13,7 @@ export default function FaqAndCTA() {
   return (
     <section
       id="faq"
-      className="relative py-12 bg-transparent"
+      className="relative py-6 bg-transparent"
       data-testid="faq-section"
     >
       <div className="px-4">
