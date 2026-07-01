@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Gem, Cog, ShieldCheck, Truck } from "lucide-react";
 import WhatsAppCTA from "./WhatsAppCTA";
+import { SITE_SECTIONS } from "../config/siteSections";
 import { BRAND_COLORS } from "../constants/theme";
 
 const PILLARS = [
@@ -87,30 +88,32 @@ export default function TrustSection() {
           </motion.div>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-px bg-white/10 border border-white/10">
-          {PILLARS.map((p, i) => (
-            <motion.div
-              key={p.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: i * 0.08 }}
-              className="group content-panel p-4 hover:bg-black transition-colors duration-500"
-              data-testid={`pillar-${i}`}
-            >
-              <p.icon
-                className="w-6 h-6 mb-4 group-hover:scale-110 transition-transform duration-500"
-                style={{ color: BRAND_COLORS.yellow }}
-                strokeWidth={1.5}
-              />
-              <h3 className="display text-white text-sm mb-2 leading-tight uppercase">
-                {p.title}
-              </h3>
-              <p className="text-white/80 text-[11px] leading-relaxed">{p.desc}</p>
-              <div className="mt-4 h-px w-6 bg-white/20 group-hover:w-12 group-hover:bg-[#FFEB3B] transition-all duration-500" />
-            </motion.div>
-          ))}
-        </div>
+        {SITE_SECTIONS.showTrustPillars && (
+          <div className="mt-8 grid grid-cols-2 gap-px bg-white/10 border border-white/10">
+            {PILLARS.map((p, i) => (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: i * 0.08 }}
+                className="group content-panel p-4 hover:bg-black transition-colors duration-500"
+                data-testid={`pillar-${i}`}
+              >
+                <p.icon
+                  className="w-6 h-6 mb-4 group-hover:scale-110 transition-transform duration-500"
+                  style={{ color: BRAND_COLORS.yellow }}
+                  strokeWidth={1.5}
+                />
+                <h3 className="display text-white text-sm mb-2 leading-tight uppercase">
+                  {p.title}
+                </h3>
+                <p className="text-white/80 text-[11px] leading-relaxed">{p.desc}</p>
+                <div className="mt-4 h-px w-6 bg-white/20 group-hover:w-12 group-hover:bg-[#FFEB3B] transition-all duration-500" />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import { ASSETS } from "./config/assets";
 
 // Phone number for orders
-export const WHATSAPP_NUMBER = "61409077106";
+export const WHATSAPP_NUMBER = "61472673375";
 export const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi Designer Vault, I'd like to enquire about your luxury collection."
 );

@@ -5,6 +5,7 @@
 export const SITE_SECTIONS = {
   showBrandMarquee: false,
   showTrustBar: false,
+  showTrustPillars: false,
   showCraftsmanship: false,
   showFooterAbout: false,
   showFooterLegal: false,
